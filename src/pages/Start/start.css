@@ -19,12 +19,16 @@ body {
 }
 
 .nav-button { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     width: 350px;
     height: 130px;
     flex-shrink: 0;
     border-radius: 80px;
     background:white;
-
+    gap: 10px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -40,7 +44,7 @@ body {
 }
 
 .nav-button:hover {
-    background: var(--deepgreen-color);; /* 마우스를 올렸을 때 버튼 색상 변경 */
+    background: var(--deep green-color);; /* 마우스를 올렸을 때 버튼 색상 변경 */
     transition: background 0.3s ease; /* 부드러운 전환 효과 */
 
     color: white;
