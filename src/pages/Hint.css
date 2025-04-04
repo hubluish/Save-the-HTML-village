@@ -14,7 +14,6 @@ html, body {
     padding: 0;
 }
 
-  /* 1440x1024 컨테이너 */
 .container {
     width: 1440px;
     height: 1024px;
@@ -23,7 +22,6 @@ html, body {
     flex-direction: column;
 }
 
-  /* 상단 영역: 좌우 106px 여백, 상단에서 58px 떨어짐 */
 .top-area {
     display: flex;
     justify-content: space-between;
@@ -32,7 +30,6 @@ html, body {
     padding: 0 106px;
 }
 
-  /* 상단 박스 (왼쪽, 오른쪽 모두 동일 크기로 설정) */
 .top-box {
     width: 113px;
     height: 70px;
@@ -40,7 +37,6 @@ html, body {
     border-radius: 40px;
 }
 
-  /* 중간 영역: 가로 중앙 정렬, 상단에서 58px 간격 */
 .middle-area {
     display: flex;
     justify-content: center;
@@ -55,7 +51,6 @@ html, body {
     border-radius: 40px;
 }
 
-  /* 하단 영역: 가로 중앙 정렬, 중간 영역 아래 54px 간격 */
 .bottom-area {
     display: flex;
     justify-content: center;
@@ -69,8 +64,6 @@ html, body {
     border-radius: 80px;
 }
 
-
-  /* 컨테이너: 1440x1024px */
 .container {
     width: 1440px;
     height: 1024px;
@@ -78,7 +71,6 @@ html, body {
     position: relative;
 }
 
-  /* 왼쪽 사각형: 113x70, br40, c0c0c0 */
 .left-rect {
     position: flex;
     left: 0;
@@ -89,10 +81,10 @@ html, body {
     border-radius: 40px;
 }
 
-  /* 중앙 사각형: 300x70, br40, c0c0c0 */
+
 .center-rect {
     position: absolute;
-    left: calc(50% - 150px); /* 300px의 절반 */
+    left: calc(50% - 150px); 
     top: 58px;
     width: 300px;
     height: 70px;
@@ -100,7 +92,7 @@ html, body {
     border-radius: 40px;
 }
 
-  /* 오른쪽 사각형 (단계 이동 바): 270x70, br40, c0c0c0 */
+
 .step-bar {
     position: flex;
     right: 0;
@@ -115,7 +107,7 @@ html, body {
     padding: 0 10px;
 }
 
-  /* 단계 이동 바 내부의 버튼 (왼쪽, 오른쪽): 50x50, br40, c0c0c0 */
+
 .step-button {
     width: 50px;
     height: 50px;
@@ -127,13 +119,13 @@ html, body {
     cursor: pointer;
 }
 
-  /* SVG 아이콘를 50x50 크기로 맞춤 */
+
 .step-button svg {
     width: 50px;
     height: 50px;
 }
 
-  /* 단계 텍스트 */
+
 .step-text {
     font-size: 20px;
     font-weight: bold;
