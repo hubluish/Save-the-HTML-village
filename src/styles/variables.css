@@ -7,6 +7,8 @@
     --lightgreen-color: #DDF9D0;
     --green-color: #BCF3A1;
     --deepgreen-color: #8FEB62;
+    --yellowGradiant: linear-gradient(180deg, #FFF4D7 0%, #FFD66C 36.41%, #FFF3D3 100.27%);
+
 
     /* colors system */
     --default-color: #FFF;
