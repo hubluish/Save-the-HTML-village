@@ -1,0 +1,231 @@
+.main-container{
+    display: flex;
+    max-width: 100vw;
+    max-height: 100vh;
+    padding: 50px 107px 50px 108px;
+    justify-content: center;
+    background: var(--deepyellow-color);
+}
+
+/* 스크롤바 고려해서 넘침 방지 */
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.solve-container {
+    display: flex;
+    width: 1225px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 32px;
+    flex-shrink: 0;
+}
+
+.solve-header {
+    display: flex;
+    width: 1225px;
+    height: 70px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 95px;
+    flex-shrink: 0;
+}
+
+.logo-box {
+    width: 113px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.logo-life-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.life {
+    width: 46px;
+    height: 49px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: var(--lightRed-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.problem-title-container {
+    width: 500px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.problem-title {
+    color: #F2AF00;
+    text-align: center;
+    font-family: "Hakgyoansim Dunggeunmiso TTF";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 180%; /* 72px */
+    letter-spacing: -0.44px;
+}
+
+.stage-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.left-arrow {
+    width: 61px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.right-arrow {
+    width: 61px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.current-stage {
+    width: 125px;
+    flex-shrink: 0;
+    color: #F2AF00;
+    text-align: center;
+    font-family: "Cafe24 Decoschool";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 50px */
+    letter-spacing: -0.55px;
+}
+
+.solve-content {
+    display: flex;
+    width: 1225px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    flex-shrink: 0;
+}
+
+.problem-code-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.problem-box {
+    width: 600px;
+    height: 158px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+    text-align: center;
+}
+
+.code-container {
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.code-tab-container {
+    display: flex;
+    width: 224px;
+    height: 27px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.code-tab {
+    width: 112px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 20px 40px 0 0;
+    background: var(--lightyellow-color);
+}
+
+.code-tab:hover {
+    background: var(--yellow-color);
+}
+
+.code-tab-text {
+    color: var(--black-color);
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    letter-spacing: -0.22px;
+}
+
+.code-input-container {
+    width: 600px;
+    height: 498px;
+    flex-shrink: 0;
+    border-radius: 0px 40px 40px 40px;
+    background: var(--lightyellow-color);
+}
+
+.code-line {
+    width: 32px;
+    height: 100%;
+    padding: 6px;
+    flex-shrink: 0;
+    border-radius: 0px 0px 0px 40px;
+    box-sizing: border-box;
+    background: var(--yellowGradiant, linear-gradient(180deg, #FFF4D7 0%, #FFD66C 36.41%, #FFF3D3 100.27%));
+}
+
+.code-line-number {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: var(--yellow-color);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.map-container {
+    width: 600px;
+    height: 698px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+}
+
+.mini-map {
+    width: 200px;
+    height: 274px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--deepyellow-color);
+    margin-left: 380px;
+    margin-top: 20px;
+}
