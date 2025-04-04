@@ -7,7 +7,11 @@ body {
     height: 100vh;
     width: 100vw;
     background: var(--yellowGradiant);
-    padding-top:588px;
+    padding-top:40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .button-Container{
     display: flex;
@@ -42,6 +46,7 @@ body {
     line-height: 150%; /* 60px */
     letter-spacing: -0.44px;
 }
+
 
 .nav-button:hover {
     background: var(--deepgreen-color);; /* 마우스를 올렸을 때 버튼 색상 변경 */
