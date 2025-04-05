@@ -4,11 +4,11 @@
     --lightyellow-color: #FFF3D3;
     --yellow-color: #FFE6A7;
     --deepyellow-color: #FFD66C;
-    --lightgreen-color: #DDF9D0;
-    --green-color: #BCF3A1;
-    --deepgreen-color: #8FEB62;
+    --lightgreen-color: #F4FFD9;
+    --green-color: #DCF3A1;
+    --deepgreen-color: #A0E038;
     --yellowGradiant: linear-gradient(180deg, #FFF4D7 0%, #FFD66C 36.41%, #FFF3D3 100.27%);
-
+    --greenGradiant:  linear-gradient(180deg, #F4FFD9 0%, #D8FF74 99.99%, #F4FFD9 100%);
 
     /* colors system */
     --default-color: #FFF;
