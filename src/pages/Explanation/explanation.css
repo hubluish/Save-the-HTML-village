@@ -45,19 +45,21 @@
     gap: 10px;
   }
   
-  /* 스텝: 기본 30px 너비, 10px 높이, br40, background #D9D9D9 */
+  /* 스텝: 선택되지 않은 항목은 22x22 원, background #D9D9D9 */
   .step {
     background: #D9D9D9;
-    border-radius: 40px;
-    width: 30px;
-    height: 10px;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
     cursor: pointer;
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
   }
   
-  /* active 클래스가 붙은 스텝은 길게 (60px) */
+  /* 선택된 스텝: 80x22 직사각형, br20 */
   .step.active {
-    width: 60px;
+    width: 80px;
+    height: 22px;
+    border-radius: 20px;
   }
   
   /* --- Middle Section --- */
