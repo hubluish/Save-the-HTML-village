@@ -1,0 +1,46 @@
+/* 모달 오버레이 */
+.stage-map-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.stage-map {
+    width: 1225px;
+    height: 924px;
+    border-radius: 40px;
+    border: 5px solid var(--deepgreen-color);
+    background: rgba(224, 241, 113, 0.68);
+    box-shadow: 13px 13px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.stage-close-button {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+}
+
+.close-icon {
+    width: 42px;
+    height: 42px;
+}
+
+.stage-background {
+    width: 1050px;
+    height: 871px;
+    flex-shrink: 0;
+}
