@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title >픽셀 계산기</title>
+    <link rel="stylesheet" href="calcul.css">
+</head>
+<body>
+    <button id="openModalBtn">계산기 열기</button>
+
+    <div id="modal" class="modal" >
+        <div class="mainContainer">
+            <img src=../../assets/icons/calculator.png alt="계산기 배경" class="background" >
+            <main class="bodyContainer">
+                <h2 class="title">픽셀 계산기</h2>
+                <section  class="inputbox">
+                    <div class="inputRow">
+                        <label for="widthInput" >가로</label>
+                        <input type="number" id="widthInput"  /> 
+                        <span id="unit1">cm</span>
+                    </div>
+                    <div class="inputRow">
+                        <label for="heightInput">세로</label>
+                        <input type="number" id="heightInput"  />
+                        <span id="unit2">cm</span>
+                    </div>
+                </section>
+                <section  class="buttons">
+                    <button id="resetBtn" aria-label="입력 초기화">AC</button>
+                    <button id="calcBtn" aria-label="계산">=</button>
+                    <button id="modeBtn" aria-label="단위 전환">↔</button>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="calcul.js"></script>
+</body>
+</html>
