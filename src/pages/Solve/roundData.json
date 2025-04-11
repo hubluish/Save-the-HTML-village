@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "title": "마을 이름을 복구하라!",
+        "problemText": "&lt;h1&gt; 태그를 사용하여<br>마을 이름을 복구하라!",
+        "defaultCode": [
+          "&lt;body&gt;",
+          "&nbsp;&nbsp;[[0]] 하하호호 HTML 마을 🏡 [[1]]",
+          "&lt;/body&gt;"
+        ],
+        "cssCode": [
+            "body {",
+            "  font-family: 'Dunggeunmiso';",
+            "  color: #F2AF00;",
+            "}"
+        ],
+        "problemButtons": ["<h1>", "</h1>"],
+        "answers": ["<h1>", "</h1>"]
+    },
+    {
+        "id": 2,
+        "title": "문단을 만들어라!",
+        "problemText": "&lt;p&gt; 태그를 사용해서<br>설명을 문단으로 만들어라!",
+        "defaultCode": [
+            "&lt;body&gt;",
+            "&nbsp;&nbsp;[[0]] 이 마을은 구조가 탄탄합니다~ [[1]]",
+            "&lt;/body&gt;"
+          ],
+        "problemButtons": ["<p>", "</p>"],
+        "answers": ["<p>", "</p>"]
+    },
+    {
+        "id": 3,
+        "title": "리스트를 복원하라!",
+        "problemText": "&lt;ul&gt;, &lt;li&gt; 태그로<br>목록을 복구하라!",
+        "defaultCode": [
+            "&lt;body&gt;",
+            "&nbsp;&nbsp;&lt;[[0]]&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;[[1]] HTML [[2]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;[[3]] CSS [[4]]",
+            "&nbsp;&nbsp;&lt;[[5]]&gt;",
+            "&lt;/body&gt;"
+        ],
+        "problemButtons": ["<ul>", "<li>", "</li>", "</ul>"],
+        "answers": ["<ul>", "<li>", "</li>", "<li>", "</li>", "</ul>"]      
+    }
+]
