@@ -15,6 +15,7 @@ function updateLabels() {
   const unit = mode === 'cm-to-px' ? 'cm' : 'px';
   unit1.textContent = unit;
   unit2.textContent = unit;
+  // modeBtn.textContent = mode === 'cm-to-px' ? 'px모드 ' : 'cm모드';
 }
 
 //단위결정(모드에 따라)
@@ -66,17 +67,20 @@ function handleCalc() {
   saveInputs(); //로컬스토리지에 저장
 }
 
+//ACBtn
 function handleReset() {
   clearInputs();
   updateLabels();
 }
 
+//modeBtn
 function handleModeToggle() {
   mode = mode === 'cm-to-px' ? 'px-to-cm' : 'cm-to-px';
   localStorage.setItem('mode', mode);
   updateLabels();
 }
 
+//초기 설정 
 function init() {
   updateLabels();
   loadInputs();
