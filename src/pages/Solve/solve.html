@@ -8,59 +8,89 @@
     <link rel="stylesheet" href="../../styles/variables.css">
 </head>
 <body>
-    <div class="container">
-        <div class="main-container">
-            <div class="solve-container">
-                <!-- Header Section -->
-                <header class="solve-header">
-                    <div class="logo-life-container">
-                        <div class="logo-box">로고img div추가</div>
-                        <div class="life">목숨img추가</div>
-                        <div class="life"></div>
-                        <div class="life"></div>
+    <div class="main-container">
+        <div class="solve-container">
+            <!-- Header Section -->
+            <header class="solve-header">
+                <div class="logo-life-container">
+                    <div class="left-box">
+                        <div class="logo-container">
+                            <img src="../../assets/icons/logo.png" class="logo" alt="logo">
+                        </div>
+                        <div class="life-container">
+                            <img src="../../assets/icons/life.png" class="life" alt="life">
+                            <img src="../../assets/icons/life.png" class="life" alt="life">
+                            <img src="../../assets/icons/life.png" class="life" alt="life">
+                        </div>
+                        
                     </div>
-                    <div class="problem-title-container">
-                        <div class="problem-title">마을 이름을 복구하라!</div>
-                    </div>
-                    <div class="stage-box">
-                        <img src="../../assets/icons/left-arrow.png" class="left-arrow" alt="left-arrow">
-                        <div class="current-stage"> 1/10 </div>
-                        <img src="../../assets/icons/right-arrow.png" class="right-arrow" alt="right-arrow">
-                    </div>
-                </header>
+                </div>
+                <div class="problem-title-container">
+                    <div class="problem-title">마을 이름을 복구하라!</div>
+                </div>
+                <div class="stage-box">
+                    <img src="../../assets/icons/left-arrow.png" class="left-arrow" alt="left-arrow">
+                    <div class="current-stage"> 1/10 </div>
+                    <img src="../../assets/icons/right-arrow.png" class="right-arrow" alt="right-arrow">
+                </div>
+            </header>
 
-                <!-- Main Content Section -->
-                <div class="solve-content">
-                    <div class="problem-code-container">
-
-                        <!-- Problem Section -->
-                        <div class="problem-box">문제문제</div>
-
-                        <!-- Code Section -->
-                        <div class="code-container">
-                            <div class="code-tab-container">
-                                <div class="code-tab">
-                                    <div class="code-tab-text">HTML</div>
-                                </div>
-                                <div class="code-tab">
-                                    <div class="code-tab-text">CSS</div>
-                                </div>
-                            </div>
-                            <div class="code-input-container">
-                                <div class="code-line">
-                                    <div class="code-line-number">1</div>
-                                </div>
-                            </div>
+            <!-- Main Content Section -->
+            <div class="solve-content">
+                <div class="problem-code-container">
+                    <!-- Problem Section -->
+                    <div class="problem-box">
+                        <div class="problem-text">&lt;h1&gt; 태그를 사용하여<br>마을 이름을 복구하라!</div>
+                        <div class="problem-button-container">
+                            <div class="problem-button">&lt;h1&gt;</div>
+                            <div class="problem-button">&lt;/h1&gt;</div>
                         </div>
                     </div>
 
-                    <!-- Answer Section -->
-                    <div class="map-container">
-                        <div class="mini-map"></div>
+                    <!-- Code Section -->
+                    <div class="code-container">
+                        <div class="code-tab-container">
+                            <div class="code-tab">
+                                <div class="code-tab-text">HTML</div>
+                            </div>
+                            <div class="code-tab-deactive">
+                                <div class="code-tab-text">CSS</div>
+                            </div>
+                        </div>
+                        <div class="code-input-container">
+                            <div class="code-line">
+                                <div class="code-line-number">1</div>
+                            </div>
+                            <div class="code-input">
+                                <div class="code-input-text">&lt;h1&gt;</div>
+                                <div class="code-problem-container">
+                                    <div class="code-input-problem"></div>
+                                    <div class="code-input-text">뭉뭉 더 힐🏠</div>
+                                    <div class="code-input-problem"></div>
+                                </div>
+                                
+                                <div class="code-clear-button">완료</div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Answer Section -->
+                <div class="map-container">
+                    <div class="mini-map"></div>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Stage Map Modal (초기에는 숨김) -->
+    <div class="stage-map-overlay hidden">
+        <div class="stage-map">
+            <h2>Stage Map</h2>
+            <p>스테이지 전체 맵이 표시됩니다.</p>
+            <button class="close-stage-map">닫기</button>
+        </div>
+    </div>
 
     <script src="solve.js"></script>
 </body>

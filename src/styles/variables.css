@@ -4,9 +4,14 @@
     --lightyellow-color: #FFF3D3;
     --yellow-color: #FFE6A7;
     --deepyellow-color: #FFD66C;
-    --lightgreen-color: #DDF9D0;
-    --green-color: #BCF3A1;
-    --deepgreen-color: #8FEB62;
+    --lightgreen-color: #FFFAD2;
+    --green-color: #E0F171;
+    --deepgreen-color: #8EC200;
+    --yellowGradiant: linear-gradient(180deg, #FFF4D7 0%, #FFD66C 36.41%, #FFF3D3 100.27%);
+    --greenGradiant: linear-gradient(180deg, #EDF9D0 0%, #8EC200 131.2%);
+    --lightblue-color: #A7F2FF;
+    --lightred-color: #FFA39F;
+    --deepred-color: #FF625C;
 
     /* colors system */
     --default-color: #FFF;
