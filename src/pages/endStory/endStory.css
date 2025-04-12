@@ -7,11 +7,9 @@
   
   body {
     display: flex;
-    justify-self: center;
-    align-content: center;
     width: 1440px;
     height: 1024px;
-    padding: 53px 106px;
+    padding: 50px 106px 65px 106px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -21,6 +19,7 @@
   .body-content{
     width: 1225.001px;
     height: 790.524px;
+    
   }
   /* --- Top Section --- */
   /* 상단 전체는 좌측 107, 상단 50의 마진 */
@@ -86,7 +85,7 @@
   #middle-section {
     width: 1225px;
     height: 450px;
-    margin: 36px auto 0 auto;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
