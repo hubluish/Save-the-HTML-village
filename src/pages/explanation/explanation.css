@@ -1,0 +1,104 @@
+/* 기본 스타일 초기화 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  /* --- Top Section --- */
+  #top-section {
+    display: flex;
+    margin-left: 107px;
+    margin-top: 50px;
+  }
+  
+  .top-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .left-rectangle {
+    width: 113px;
+    height: 70px;
+    background: #D9D9D9;
+    border-radius: 40px;
+  }
+  
+  .stepper-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .stepper {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .step {
+    background: #D9D9D9;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .step.active {
+    width: 80px;
+    height: 22px;
+    border-radius: 20px;
+  }
+  
+  /* --- Middle Section --- */
+  #middle-section {
+    width: 1225px;
+    height: 210px;
+    background: #D9D9D9;
+    border-radius: 40px;
+    margin: 36px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* --- Bottom Section --- */
+  #bottom-section {
+    width: 1225px;
+    height: 600px;
+    background: #D9D9D9;
+    margin: 13px auto 0 auto;
+    position: relative;
+    display: flex;
+    border-radius: 40px;
+  }
+  
+  .prev-btn,
+  .next-btn {
+    width: 200px;
+    height: 70px;
+    background: #C0C0C0;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .prev-btn {
+    position: absolute;
+    left: 20px;
+    bottom: 34px;
+  }
+  
+  .next-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 34px;
+  }
+  
