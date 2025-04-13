@@ -65,25 +65,27 @@ body {
   font-size: 50px;
   font-weight: 500;
   letter-spacing: -1.1px;
-  margin: 0 0 20px;
+  margin: 0 0 5px;
 }
 
 /* 입력 영역 */
 .inputbox {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 50px;
   height: 301px;
-  width: 100%;
+  width: 274px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .inputRow {
   font-family: 'Bookk Gothic';
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: baseline;
+  justify-content: flex-start;
   gap: 10px;
   margin: 10px 0;
 }
@@ -129,6 +131,9 @@ body {
   background: lightyellow;
   transition: background 0.2s;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons button:hover {
