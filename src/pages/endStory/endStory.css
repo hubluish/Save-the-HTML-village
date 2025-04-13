@@ -4,14 +4,16 @@
     margin: 0;
     padding: 0;
   }
+
+
   
   body {
     display: flex;
-    width: 1440px;
-    height: 1024px;
+    min-width: 1440px;
+    min-height: 1024px;
     padding: 50px 106px 65px 106px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     background: var(--deepYellow, #FFD66C);
   }
@@ -23,7 +25,9 @@
   }
   /* --- Top Section --- */
   /* 상단 전체는 좌측 107, 상단 50의 마진 */
-
+  .header{
+    width:1225px;
+  }
   .top-content {
     display: flex;
     align-items: center;
