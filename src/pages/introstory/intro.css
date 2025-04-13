@@ -5,13 +5,6 @@
   padding: 0;
 }
 
-html {
-  display: flex;
-  align-self:center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 body {
   display: flex;
   min-width: 1440px;
