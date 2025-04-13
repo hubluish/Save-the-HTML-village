@@ -1,34 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
   const totalSteps = 9;
-  const stepper = document.querySelector('.stepper');
-  let currentStep = 0;
+  let currentStep = 0; // 이건 위에서 이미 있음
 
-  for (let i = 0; i < totalSteps; i++) {
-    const step = document.createElement('div');
-    step.classList.add('step');
-    if (i === currentStep) {
-      step.classList.add('active');
-    }
-    step.addEventListener('click', function () {
-      currentStep = i;
-      updateSteps();
-    });
-    stepper.appendChild(step);
+  function updateProgressBar() {
+    const progressFill = document.querySelector('.progress-fill');
+    const progressPercentage = ((currentStep + 1) / totalSteps) * 100;
+    progressFill.style.width = `${progressPercentage}%`;
   }
 
-  const steps = document.querySelectorAll('.step');
 
   function updateSteps() {
-    steps.forEach((step, index) => {
-      step.classList.toggle('active', index === currentStep);
-    });
-
+    // 중간 섹션 업데이트
     const middleSection = document.getElementById('middle-section');
     middleSection.innerHTML = getMiddleContent(currentStep);
-
-    // Bottom section의 텍스트 업데이트
+  
+    // 하단 텍스트 업데이트
     const bottomSectionText = document.getElementById('bottom-text');
     bottomSectionText.innerHTML = getBottomText(currentStep);
+  
+    // 프로그래스 바 업데이트 ✨
+    updateProgressBar();
   }
 
   // next-btn 클릭 시 clear.html로 이동
