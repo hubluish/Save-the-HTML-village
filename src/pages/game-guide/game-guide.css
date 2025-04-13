@@ -72,9 +72,21 @@
   
   #main-section {
     width: 1225px;
-    height: 822px;
+    height: 485px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 32px auto 0 auto;
     background: var(--lightyellow-color);
-    margin: 13px auto 0 auto;
+    border-radius: 40px;
+  }
+
+  #text-section {
+    width: 1225px;
+    height: 320px;
+    background: url('../../assets/icons/textbox.png') no-repeat center center;
+    margin: 25px auto 0 auto;
     position: relative;
     display: flex;
     border-radius: 40px;
@@ -84,8 +96,8 @@
   
  .prev-btn,
 .next-btn {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   flex-shrink: 0;
   aspect-ratio: 1/1;
   background: none; 
@@ -93,7 +105,7 @@
   padding: 0; 
   cursor: pointer;
   display: flex;
-  margin: 15px 27px;
+  margin: 60px 40px;
 }
 
 .prev-btn svg,
