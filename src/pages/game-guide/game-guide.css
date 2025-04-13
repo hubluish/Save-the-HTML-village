@@ -90,8 +90,34 @@
     position: relative;
     display: flex;
     border-radius: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  .button-container {
+    display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    width: 1225px;
+    height: 60px;
+  }
+  
+  .text-content {
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
+    color: #000;
+    text-align: center;
+    font-family: 'DOSSaemmul', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 50px */
+    letter-spacing: -0.55px;
   }
   
  .prev-btn,
@@ -105,7 +131,7 @@
   padding: 0; 
   cursor: pointer;
   display: flex;
-  margin: 60px 40px;
+  margin: auto 40px 25px 40px;
 }
 
 .prev-btn svg,
