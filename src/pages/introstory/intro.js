@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // next-btn 클릭 시 clear.html로 이동
   document.querySelector('.next-btn').addEventListener('click', function () {
     if (currentStep === totalSteps - 1) {
-      window.location.href = '../start.html';
-    } else {
+      document.getElementById('modal-iframe').style.display = 'block';
+      } else {
       currentStep++;
       updateSteps();
     }
@@ -86,8 +86,43 @@ function getMiddleContent(stepIndex) {
     case 3:
       return `
         <div class="image-container">
-          <img src="../../assets/icons/story_end_2.png" class="bg-image" />
-          <img src="../../assets/icons/story_end_4.png" class="centered-img" />
+          <img src="../../assets/icons/story_intro_4.png" class="bg-image" />
+          <img src="../../assets/icons/story_intro_4-2.png" class="centered-img" />
+        </div>
+      `;
+    case 4:
+      return `
+        <div class="image-container">
+          <img src="../../assets/icons/story_intro_4.png" class="bg-image" />
+          <img src="../../assets/icons/story_intro_5.png" class="centered-img" />
+        </div>
+      `;
+    case 5:
+      return `
+        <div class="image-container">
+          <img src="../../assets/icons/story_intro_4.png" class="bg-image" />
+          <img src="../../assets/icons/story_intro_6.png" class="centered-img" />
+        </div>
+      `;
+    case 6:
+      return `
+        <div class="image-container">
+          <img src="../../assets/icons/story_intro_7.png" class="bg-image" />
+          <img src="../../assets/icons/story_intro_7_2.png" class="overlay-image" />
+        </div>
+      `;
+    case 7:
+      return `
+        <div class="image-container">
+          <img src="../../assets/icons/story_intro_7.png" class="bg-image" />
+          <img src="../../assets/icons/story_intro_8.png" class="overlay-image" />
+        </div>
+      `;
+    case 8:
+      return `
+        <div class="image-container">
+          <img src="../../assets/icons/story_intro_7.png" class="bg-image" />
+          <img src="../../assets/icons/story_intro_9.png" class="overlay-image" />
         </div>
       `;
     default:
