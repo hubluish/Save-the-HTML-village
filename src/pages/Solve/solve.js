@@ -183,6 +183,17 @@ document.addEventListener("DOMContentLoaded", function () {
     changeStage(1);    
   });
 
+  function updateClearedPaths() {
+    const clearedStages = JSON.parse(localStorage.getItem("clearedStages")) || [];
+  
+    clearedStages.forEach(stage => {
+      const path = document.getElementById(`path-${stage}-${stage + 1}`);
+      if (path) {
+        path.setAttribute("stroke", "#F5D611");
+      }
+    });
+  }
+
   // 스테이지 맵 오픈 & 닫기
   stageDisplay.addEventListener("click", () => {
       fetch("levelStage.html")
@@ -198,6 +209,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
           container.innerHTML = ""; // 기존 모달 제거
           container.appendChild(stageMap);
+
+          updateClearedPaths();
     
           // 닫기 버튼 작동하게 설정
           const closeBtn = stageMap.querySelector(".stage-close-button");
@@ -322,6 +335,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!clearedStages.includes(stage)) {
       clearedStages.push(stage);
       localStorage.setItem("clearedStages", JSON.stringify(clearedStages));
+    }
+
+    // 선 색상 변경 로직 추가
+    const pathToNext = document.getElementById(`path-${stage}-${stage + 1}`);
+    if (pathToNext) {
+      pathToNext.setAttribute("stroke", "#F5D611");
     }
   }
   
