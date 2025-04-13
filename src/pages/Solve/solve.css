@@ -1,16 +1,14 @@
 .main-container{
     display: flex;
-    max-width: 100vw;
-    max-height: 100vh;
-    padding: 50px 107px 50px 108px;
     justify-content: center;
-    background: var(--deepyellow-color);
 }
 
 /* 스크롤바 고려해서 넘침 방지 */
 body {
     margin: 0;
     overflow: hidden;
+    padding: 50px 107px 50px 108px;
+    background: var(--deepyellow-color);
 }
 
 .solve-container {
