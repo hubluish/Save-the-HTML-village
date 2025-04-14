@@ -69,11 +69,12 @@
     background: var(--yellow-color)
   }
   
-  #main-section-single {
-    width: 1225px;
+  #main-section-first {
+    max-width: 1225px;
+    width: 85%;
     height: 822px;
     background: var(--lightyellow-color);
-    margin: 13px auto 0 auto;
+    margin: 32px auto;
     position: relative;
     display: flex;
     border-radius: 40px;
@@ -81,13 +82,14 @@
     justify-content: space-between;
   }
 
-  #main-section-double {
+  #main-section-second {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 1225px;
-    margin: 0 auto;
+    max-width: 1225px;
+    width: 85%;
+    margin: 32px auto;
   }
 
   .top-section{
@@ -95,7 +97,6 @@
     flex-direction: row;
     width: 1225px;
     justify-content: space-between;
-    margin-top: 32px;
   }
 
   .left-section{
