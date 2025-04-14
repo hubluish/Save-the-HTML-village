@@ -40,6 +40,41 @@
     height: 61px;
   }
   
+  .logo-left{
+    width: 232px;
+    height: 151px;
+  }
+
+  .main-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    flex-direction: row;
+  }
+
+  .left-section {
+    padding-right: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .logo-text{
+    margin-top: 15px;
+    color: #000;
+    text-align: center;
+    font-family: 'DOSSaemmul', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 30px */
+    letter-spacing: -0.33px;
+  }
+
   .stepper-container {
     flex: 1;
     display: flex;
@@ -89,10 +124,9 @@
     position: relative;
     display: flex;
     border-radius: 40px;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-
   }
 
   .button-container {
@@ -101,6 +135,8 @@
     justify-content: space-between;
     width: 1225px;
     height: 60px;
+    position: absolute;
+    bottom: 50px;
   }
   
   .text-content {

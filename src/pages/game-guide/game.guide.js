@@ -49,19 +49,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateContent() {
     if (currentStep === 0) {
-      textContent.textContent = "이게임은 꼭 전체화면으로 즐겨야해 !<br> 전체화면으로 바꿔줘 뭉~~";
+      textContent.innerHTML = "이게임은 꼭 전체화면으로 즐겨야해!<br>전체화면으로 바꿔줘 뭉~~";
     } else if (currentStep === 1) {
-      textContent.textContent = "안녕 나는 뭉뭉이야뭉! 내가 게임하는 방법을 아르켜줄게";
+      textContent.innerHTML = "안녕 나는 뭉뭉이야뭉!<br>내가 게임하는 방법을 아르켜줄게";
     } else if (currentStep === 2) {
-      textContent.textContent = "세 번째";
+      textContent.innerHTML = "먼저 개념 설명 화면이야!<br>화살표를 누르면 다음 화면으로 넘어가고,<br>문제를 풀던 중에 다시 왼쪽 위에 나를 클릭하면<br>개념 설명으로 돌아올 수 있어";
     } else if (currentStep === 3) {
-      textContent.textContent = "네 번째";
+      textContent.innerHTML = "네 번째";
     } else if (currentStep === 4) {
-      textContent.textContent = "다섯 번째";
+      textContent.innerHTML = "다섯 번째";
     } else if (currentStep === 5) {
-      textContent.textContent = "여섯 번째";
+      textContent.innerHTML = "여섯 번째";
     } else if (currentStep === 6) {
-      textContent.textContent = "마지막 단계";
+      textContent.innerHTML = "마지막 단계";
     }
   }
 
