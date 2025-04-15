@@ -6,7 +6,8 @@ body {
 .main-container{
     height: 100vh;
     width: 100vw;
-    background: var(--greenGradiant);
+    background-image: url('../../assets/icons/start/clear_bg.png');
+    background-size: cover;
     padding-top:40px;
     display: flex;
     flex-direction: column;
@@ -23,15 +24,15 @@ body {
 }
 
 .nav-button { 
+    
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 350px;
+    width: 424px;
     height: 130px;
+    justify-content: center;
+    align-items: center;
     flex-shrink: 0;
     border-radius: 80px;
-    background:white;
+    background: var(--lightyellow-color);
     gap: 10px;
     border: none;
     cursor: pointer;
@@ -48,15 +49,35 @@ body {
 }
 
 
+
 .nav-button:hover {
-    background: var(--deepgreen-color);; /* 마우스를 올렸을 때 버튼 색상 변경 */
+    background: #341F09; /* 마우스를 올렸을 때 버튼 색상 변경 */
     transition: background 0.3s ease; /* 부드러운 전환 효과 */
-
-    color: white;
-
-    
+    color:  var(--lightyellow-color);  
+    animation: shake 0.5s ease;
+    animation-iteration-count: 1;
 }
-/* .nav-button:hover .button-icon {
-    filter: invert(100%);
-    
-} */
+
+.bg-image {
+    width: 1225px;
+    height: 450px;
+    object-fit: contain;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(5px);
+    }
+  }

@@ -6,7 +6,8 @@ body {
 .main-container{
     height: 100vh;
     width: 100vw;
-    background: var(--yellowGradiant);
+    background-image: url('../../assets/icons/start/over_bg.jpg');
+    background-size: cover;
     padding-top:40px;
     display: flex;
     flex-direction: column;
@@ -22,16 +23,19 @@ body {
     /* margin-top : 588px; */
 }
 
+.button-icon{
+    z-index: 9999; /* 다른 콘텐츠 위에 표시 */
+}
 .nav-button { 
+    
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 350px;
+    width: 424px;
     height: 130px;
+    justify-content: center;
+    align-items: center;
     flex-shrink: 0;
     border-radius: 80px;
-    background:white;
+    background: var(--lightyellow-color);
     gap: 10px;
     border: none;
     cursor: pointer;
@@ -47,16 +51,37 @@ body {
     letter-spacing: -0.44px;
 }
 
-
 .nav-button:hover {
-    background: var(--deepgreen-color);; /* 마우스를 올렸을 때 버튼 색상 변경 */
+    background: #341F09; /* 마우스를 올렸을 때 버튼 색상 변경 */
     transition: background 0.3s ease; /* 부드러운 전환 효과 */
-
-    color: white;
-
-    
+    color:  var(--lightyellow-color);  
+    animation: shake 0.5s ease;
+    animation-iteration-count: 1;
 }
-/* .nav-button:hover .button-icon {
-    filter: invert(100%);
-    
-} */
+#rainCanvas {
+    position: fixed; /* 화면 전체에 비를 내려주기 위해 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* 다른 콘텐츠 위에 표시 */
+    pointer-events: none; /* 클릭 이벤트를 캔버스가 가리지 않게 */
+  }
+
+@keyframes shake {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(5px);
+    }
+  }

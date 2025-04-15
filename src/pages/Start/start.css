@@ -1,33 +1,53 @@
 body {
     margin: 0;
     overflow: hidden;
+    background: var(--yellowGradiant);
+    background-image: url('../../assets/icons/start/start_bg.png');
+    background-size: cover ;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-container{
-    height: 100vh;
-    width: 100vw;
-    background: var(--yellowGradiant);
-    padding-top:588px;
+    width: 1440px;
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.title-container{
+    display: flex;
+    width: 752px;
+    padding: 0px 0.16px 50px 0.16px;
+    justify-content: center;
+    align-items: center;
+}
+
 .button-Container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    /* margin-top : 588px; */
+    margin-top : 30px;
 }
 
 .nav-button { 
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
     width: 350px;
     height: 130px;
     flex-shrink: 0;
     border-radius: 80px;
-    background:white;
+    background: var(--lightyellow-color);
     gap: 10px;
     border: none;
     cursor: pointer;
@@ -44,14 +64,47 @@ body {
 }
 
 .nav-button:hover {
-    background: var(--deepgreen-color);; /* 마우스를 올렸을 때 버튼 색상 변경 */
+    background: #341F09; /* 마우스를 올렸을 때 버튼 색상 변경 */
     transition: background 0.3s ease; /* 부드러운 전환 효과 */
-
-    color: white;
-
-    
+    color:  var(--lightyellow-color);  
+    animation: shake 0.5s ease;
+    animation-iteration-count: 1;
 }
-/* .nav-button:hover .button-icon {
-    filter: invert(100%);
-    
-} */
+
+@keyframes shake {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(5px);
+    }
+  }
+
+  @keyframes elegantDropIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.9);
+    }
+    60% {
+      opacity: 0.8;
+      transform: translateY(5px) scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .title-icon {
+    animation: elegantDropIn 1s ease-out forwards;
+    animation-delay: 0.2s;
+  }

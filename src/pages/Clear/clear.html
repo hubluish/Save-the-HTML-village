@@ -9,16 +9,16 @@
 </head>
 <body>
     <div class="main-container">
-        <img src="../../assets/icons/start/clear_bg.png"  class="button-icon" style="width: 1440px;">
-        <img src="../../assets/icons/start/clear.png"  class="button-icon" style="width: 750px;
+        <img src="../../assets/icons/start/clear.png"  style="width: 750px;
         flex-shrink: 0; margin-bottom:30px;">
         <div class="button-Container">
-            <button class="nav-button" onclick="location.href='solve.html'">
-                <img src="../../assets/icons/start/b_replay.svg"  class="button-icon">
-                한 번 더!!
+            <button class="nav-button" onclick="location.href='solve.html'" id="replayButton">
+                <img src="../../assets/icons/start/b_replay.svg"  class="button-icon" id="replayBtn">
+                한 번 더 할래 !
             </button>
         </div> 
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="clear.js"></script>
 </body>
 </html>
