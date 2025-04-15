@@ -129,11 +129,15 @@ body {
   border: none;
   cursor: pointer;
   background: lightyellow;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s ease-in-out; /* transform에 대한 transition 추가 */
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.buttons button:active {
+  transform: scale(0.9); /* 클릭할 때 버튼 크기 축소 */
 }
 
 .buttons button:hover {
