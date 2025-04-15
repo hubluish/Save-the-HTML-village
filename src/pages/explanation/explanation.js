@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const secondTemplate = document.getElementById('main-section-second');
   let currentStep = 0;
 
-  // 각 스텝에 어떤 템플릿을 쓸지 정의
   const stageTemplates = [
-    'first', // 스텝 0
-    'first', // 스텝 1
-    'second', // 스텝 2
-    'second', // 스텝 3
-    'first'  // 스텝 4
+    'first', 
+    'first', 
+    'second', 
+    'second', 
+    'first'  
   ];
 
   // 스텝 표시 요소 생성

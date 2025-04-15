@@ -69,6 +69,57 @@
     background: var(--yellow-color)
   }
   
+  .prev-btn,
+  .next-btn {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    background: none; 
+    border: none;
+    padding: 0; 
+    cursor: pointer;
+    display: flex;
+    margin: 15px 27px;
+  }
+  
+  .prev-btn svg,
+  .next-btn svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .button-container {
+    width: 1225px;;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom:0;
+  }
+
+  .title{
+    color: var(--black-color);
+    text-align: center;
+    font-family: "Ownglyph PDH";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 96px */
+    letter-spacing: -0.704px;
+  }
+  
+  .description{
+    color: var(--black-color);
+    font-family: "Ownglyph PDH";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 75px */
+    letter-spacing: -1.1px;
+  }
+
+
   #main-section-first {
     max-width: 1225px;
     width: 85%;
@@ -78,9 +129,48 @@
     position: relative;
     display: flex;
     border-radius: 40px;
-    align-items: flex-end;
-    justify-content: space-between;
+    flex-direction: column;
   }
+
+  .element-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   #main-section-second {
     display: flex;
@@ -105,6 +195,9 @@
     flex-shrink: 0;
     background: var(--lightyellow-color);
     border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .right-section{
@@ -113,6 +206,9 @@
     flex-shrink: 0;
     background: var(--lightyellow-color);
     border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .bottom-section{
@@ -120,34 +216,32 @@
     height: 323px;
     flex-shrink: 0;
     background: var(--lightyellow-color);
-    
-    align-items: flex-end;
-    justify-content: space-between;
-    border-radius: 40px;
-    
-    margin: 18px auto 0 auto;
-    position: relative;
+    align-items: center;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 40px;
+    margin: 18px auto 0 auto;
   }
-    
-  
- .prev-btn,
-.next-btn {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
-  aspect-ratio: 1/1;
-  background: none; 
-  border: none;
-  padding: 0; 
-  cursor: pointer;
-  display: flex;
-  margin: 15px 27px;
-}
 
-.prev-btn svg,
-.next-btn svg {
-  width: 100%;
-  height: 100%;
-}
+  .code{
+    color: #000;
+    font-family: "Cascadia Code";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 150%; /* 48px */
+    letter-spacing: -0.352px;
+  }
+  
+  .code-result{
+    color: #000;
+    font-family: "Cascadia Code";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 150%; /* 48px */
+    letter-spacing: -0.352px;
+  }
+
 
