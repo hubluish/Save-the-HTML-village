@@ -302,12 +302,17 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   
       if (!allCorrect) {
+        // 생명 하나 제거하면서 애니메이션
         const lives = document.querySelectorAll(".life");
-        if (lives.length > 0) lives[lives.length - 1].remove();
-        if (lives.length - 1 === 0) {
+        if (lives.length > 0) {
+          const lastLife = lives[lives.length - 1];
+          lastLife.classList.add("shake");
+          document.body.classList.add("shake");
+
           setTimeout(() => {
-            window.location.href = "gameover.html";
-          }, 500);
+            document.body.classList.remove("shake");
+            lastLife.remove(); // 애니메이션 끝나고 제거
+          }, 300);
         }
         return;
       }
