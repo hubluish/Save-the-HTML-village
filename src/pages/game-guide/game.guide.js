@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const totalSteps = 7;
+  const totalSteps = 13;
   const stepper = document.querySelector('.stepper');
   const prevBtn = document.querySelector('.prev-btn');
   const nextBtn = document.querySelector('.next-btn');
@@ -61,6 +61,18 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (currentStep === 5) {
       textContent.innerHTML = "여섯 번째";
     } else if (currentStep === 6) {
+      textContent.innerHTML = "일곱 번째";
+    } else if (currentStep === 7) {
+      textContent.innerHTML = "여덟 번째";
+    } else if (currentStep === 8) {
+      textContent.innerHTML = "아홉 번째";
+    } else if (currentStep === 9) {
+      textContent.innerHTML = "열 번째";
+    } else if (currentStep === 10) {
+      textContent.innerHTML = "열한 번째";
+    } else if (currentStep === 11) {
+      textContent.innerHTML = "열두 번째";
+    } else if (currentStep === 12) {
       textContent.innerHTML = "마지막 단계";
     }
   }
