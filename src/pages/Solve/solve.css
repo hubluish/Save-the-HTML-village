@@ -188,7 +188,7 @@ body.shake {
 .problem-text{
     color: rgba(0, 0, 0, 0.80);
     font-family: DOSSaemmul;
-    font-size: 36px;
+    font-size: 27px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 54px */
@@ -241,9 +241,9 @@ body.shake {
 
 .code-tab-container {
     display: flex;
-    width: 224px;
+    width: 336px;
     height: 27px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-shrink: 0;
 }
@@ -304,7 +304,7 @@ body.shake {
 .code-line-number {
     width: 21px;
     height: 21px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     border-radius: 50px;
     background: var(--lightyellow-color);
 

@@ -1,8 +1,8 @@
 [
     {
-        "id": 1,
+        "id": 0,
         "title": "마을 이름을 복구하라!",
-        "problemText": "&lt;h1&gt; 태그를 사용하여<br>마을 이름을 복구하라!",
+        "problemText": "&lt;h1&gt;태그를 사용하여<br>마을 이름을 복구하라!",
         "defaultCode": [
           "&lt;body&gt;",
           "&nbsp;&nbsp;[[0]] 하하호호 HTML 마을 🏡 [[1]]",
@@ -14,25 +14,65 @@
             "  color: #F2AF00;",
             "}"
         ],
+        "jsCode": [
+            "const villageName = document.querySelector('h1');",
+            "villageName.style.fontSize = '50px';",
+            "villageName.style.textAlign = 'center';",
+            "villageName.style.marginTop = '100px';",
+            "villageName.style.fontWeight = 'bold';"
+        ],
         "problemButtons": ["<h1>", "</h1>"],
         "answers": ["<h1>", "</h1>"]
     },
     {
-        "id": 2,
-        "title": "문단을 만들어라!",
-        "problemText": "&lt;p&gt; 태그를 사용해서<br>설명을 문단으로 만들어라!",
+        "id": 1,
+        "title": "집을 세워라뭉!",
+        "problemText": [
+            "&lt;img&gt;태그, house class를 사용하여 집을 세워라!",
+            "집을 9cm, 8cm로 하고 싶은데,px로 넣어야 해!",
+            "픽셀 계산기를 써보자!"
+        ],
         "defaultCode": [
             "&lt;body&gt;",
-            "&nbsp;&nbsp;[[0]] 이 마을은 구조가 탄탄합니다~ [[1]]",
+            "&nbsp;&nbsp;&lt;[[0]] src=&quot;house.png&quot; alt=&quot;집1&quot; class=&quot;house&quot;&gt;",
+            "&lt;/body&gt;"
+        ],
+        "cssCode": [
+            "[[1]] {",
+            "  width: [[2]];",
+            "  height: [[3]];",
+            "}"
+        ],
+        "problemButtons": [".house", "#house", "img", "300px", "340px"],
+        "answers": ["img", ".house", "340px", "300px"]
+    },
+    {
+        "id": 2,
+        "title": "길을 만들라뭉!",
+        "problemText": "&lt;a&gt; 태그와 road id를 사용해서 길을 만들어봐!",
+        "defaultCode": [
+            "&lt;body&gt;",
+            "&nbsp;&nbsp;[[0]] href=&quot;forest.html&quot; id=&quot;road&quot;&gt;길 따라가기 →[[1]]",
             "&lt;/body&gt;"
           ],
-        "problemButtons": ["<p>", "</p>"],
-        "answers": ["<p>", "</p>"]
+        "cssCode": [
+            "[[2]] {",
+            "  display: inline-block;",
+            "  padding: 10px 20px;",
+            "  background-color: brown;",
+            "  color: white;",
+            "  text-decoration: none;",
+            "  border-radius: 10px;",
+            "  font-size: 20px;",
+            "}"
+        ],
+        "problemButtons": ["</a>", "<a>", "#road", ".road"],
+        "answers": ["<a>", "</a>", "#road"]
     },
     {
         "id": 3,
-        "title": "리스트를 복원하라!",
-        "problemText": "&lt;ul&gt;, &lt;li&gt; 태그로<br>목록을 복구하라!",
+        "title": "나무를 심어라뭉!",
+        "problemText": "나무가 이상하다!<br>나무를 정렬해보자!",
         "defaultCode": [
             "&lt;body&gt;",
             "&nbsp;&nbsp;&lt;[[0]]&gt;",

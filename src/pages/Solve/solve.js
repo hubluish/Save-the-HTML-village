@@ -1,3 +1,12 @@
+if (performance.getEntriesByType("navigation")[0].type === "reload") {
+  localStorage.removeItem("clearedStages");
+  for (let i = 1; i <= 10; i++) {
+    localStorage.removeItem(`answers-stage-${i}-html`);
+    localStorage.removeItem(`answers-stage-${i}-css`);
+    localStorage.removeItem(`answers-stage-${i}-js`);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const leftArrow = document.querySelector(".left-arrow");
   const rightArrow = document.querySelector(".right-arrow");
@@ -6,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeStageMapBtn = document.querySelector(".close-stage-map");
   
   let currentTab = "html";
-  let currentStage = 1;
+  let currentStage = 0;
   let currentRoundData = null;
   const maxStage = 10;
 
@@ -30,22 +39,63 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function switchTab(tab) {
-      if (!currentRoundData) return;
-    
-      currentTab = tab;
-    
-      // 탭 스타일 갱신
-      document.querySelectorAll(".code-tab-button").forEach(tabEl => {
-        tabEl.classList.remove("code-tab", "code-tab-deactive");
-      });
-      document.getElementById("html-tab").classList.add(tab === "html" ? "code-tab" : "code-tab-deactive");
-      document.getElementById("css-tab").classList.add(tab === "css" ? "code-tab" : "code-tab-deactive");
-    
-      // 코드 다시 렌더링
-      const codeToRender = tab === "html" ? currentRoundData.defaultCode : currentRoundData.cssCode;
-      renderCode(codeToRender);
+  function saveCurrentTabAnswers() {
+    const zones = document.querySelectorAll(".code-input-problem");
+    const saved = [];
+  
+    zones.forEach(zone => {
+      const idx = parseInt(zone.dataset.index);
+      saved[idx] = zone.textContent.trim();
+    });
+  
+    localStorage.setItem(`answers-stage-${currentStage}-${currentTab}`, JSON.stringify(saved));
   }
+
+  function switchTab(tab) {
+    if (!currentRoundData) return;
+    
+    saveCurrentTabAnswers();
+
+    currentTab = tab;
+  
+    const tabContainer = document.querySelector(".code-tab-container");
+    tabContainer.innerHTML = ""; // 기존 탭 초기화
+  
+    const tabs = [];
+  
+    if (currentRoundData.defaultCode) {
+      tabs.push("html");
+    }
+    if (currentRoundData.cssCode) {
+      tabs.push("css");
+    }
+    if (currentRoundData.jsCode) {
+      tabs.push("js");
+    }
+  
+    tabs.forEach(type => {
+      const tabEl = document.createElement("div");
+      tabEl.id = `${type}-tab`;
+      tabEl.className = type === tab ? "code-tab" : "code-tab-deactive";
+  
+      const textEl = document.createElement("div");
+      textEl.className = "code-tab-text";
+      textEl.textContent = type.toUpperCase();
+  
+      tabEl.appendChild(textEl);
+      tabEl.addEventListener("click", () => switchTab(type));
+  
+      tabContainer.appendChild(tabEl);
+    });
+  
+    let codeToRender = [];
+    if (tab === "html") codeToRender = currentRoundData.defaultCode;
+    if (tab === "css") codeToRender = currentRoundData.cssCode;
+    if (tab === "js") codeToRender = currentRoundData.jsCode;
+  
+    renderCode(codeToRender);
+    restoreTabAnswers();
+  }  
 
   function loadStageData(stageId) {
       fetch("roundData.json")
@@ -55,10 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
           if (!round) return;
     
           currentRoundData = round; // 현재 라운드 정보 저장
-    
+          
           document.querySelector(".problem-title").textContent = round.title;
-          document.querySelector(".problem-text").innerHTML = round.problemText;
-    
+          document.querySelector(".problem-text").innerHTML = Array.isArray(round.problemText)
+            ? round.problemText.join("<br>")
+            : round.problemText;
+                
           const buttonContainer = document.querySelector(".problem-button-container");
           buttonContainer.innerHTML = "";
           round.problemButtons.forEach(text => {
@@ -69,7 +121,15 @@ document.addEventListener("DOMContentLoaded", function () {
           });
     
           applyDragEvents();
-          switchTab("html");
+
+          // 처음에 보여줄 탭 결정
+          if (round.defaultCode) {
+            switchTab("html");
+          } else if (round.cssCode) {
+            switchTab("css");
+          } else if (round.jsCode) {
+            switchTab("js");
+          }
           
           document.querySelectorAll(".code-input-problem").forEach(zone => {
             zone.textContent = "";
@@ -92,22 +152,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function checkAnswerCorrect() {
-      const answerArray = currentRoundData.answers;
-      const dropZones = document.querySelectorAll(".code-input-problem");
-    
-      let allCorrect = true;
-    
-      dropZones.forEach((zone, idx) => {
-        const userInput = zone.textContent.trim();
-        const correctAnswer = answerArray[idx];
-    
-        if (userInput !== correctAnswer) {
-          allCorrect = false;
-        }
-      });
-    
-      return allCorrect;
-  }      
+    const answerArray = currentRoundData.answers;
+    const allAnswers = Array(answerArray.length).fill("");
+  
+    const tabs = [
+      { type: "html", code: currentRoundData.defaultCode },
+      { type: "css", code: currentRoundData.cssCode },
+      { type: "js", code: currentRoundData.jsCode },
+    ];
+  
+    tabs.forEach(({ type, code }) => {
+      if (!code) return;
+  
+      // 이 탭에 [[n]] 형태의 문제가 하나라도 있는지 확인
+      const hasSlots = code.some(line => /\[\[\d+\]\]/.test(line));
+      if (!hasSlots) return;
+  
+      const saved = JSON.parse(localStorage.getItem(`answers-stage-${currentStage}-${type}`));
+      if (saved && Array.isArray(saved)) {
+        saved.forEach((value, idx) => {
+          if (value && !allAnswers[idx]) {
+            allAnswers[idx] = value;
+          }
+        });
+      }
+    });
+  
+    return allAnswers.every((val, idx) => val === answerArray[idx]);
+  }  
 
   function renderCode(codeLines) {
       const display = document.getElementById("code-display");
@@ -134,36 +206,29 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       bindDropEvents();
-    
-      // 드래그 드롭 이벤트 연결
-      document.querySelectorAll(".code-input-problem").forEach(dropZone => {
-        dropZone.addEventListener("dragover", (e) => {
-          e.preventDefault();
-          dropZone.style.backgroundColor = "#A4D4AE";
-        });
-    
-        dropZone.addEventListener("dragleave", () => {
-          dropZone.style.backgroundColor = "";
-        });
-    
-        dropZone.addEventListener("drop", (e) => {
-          e.preventDefault();
-          const text = e.dataTransfer.getData("text/plain");
-          dropZone.textContent = text;
-          dropZone.style.backgroundColor = "";
-        });
+
+      // 슬롯 초기화 + 정확한 인덱스 기준으로 초기화
+      const zones = document.querySelectorAll(".code-input-problem");
+      zones.forEach(zone => {
+        zone.textContent = "";
+        zone.classList.remove("code-problem-correct", "code-problem-wrong");
       });
 
-      // 저장된 정답 복원
-      const savedAnswers = JSON.parse(localStorage.getItem(`answers-stage-${currentStage}`)) || [];
-      if (savedAnswers.length > 0) {
-        document.querySelectorAll(".code-input-problem").forEach((zone, idx) => {
-          if (savedAnswers[idx]) {
-            zone.textContent = savedAnswers[idx];
-          }
-        });
-      }      
-  }          
+      // 2. 정답 복원
+      restoreTabAnswers();
+  }
+
+  function restoreTabAnswers() {
+    const saved = JSON.parse(localStorage.getItem(`answers-stage-${currentStage}-${currentTab}`)) || [];
+    const zones = document.querySelectorAll(".code-input-problem");
+  
+    zones.forEach(zone => {
+      const idx = parseInt(zone.dataset.index);
+      if (saved[idx] !== undefined) {
+        zone.textContent = saved[idx];
+      }
+    });
+  }  
 
   // 초기 로딩
   updateStageDisplay();
@@ -254,40 +319,67 @@ document.addEventListener("DOMContentLoaded", function () {
         const text = e.dataTransfer.getData("text/plain");
         dropZone.textContent = text;
         dropZone.style.backgroundColor = "";
+
+        // 드래그해서 놓을 때마다 저장
+        const answersToSave = Array.from(allZones).map(z => z.textContent.trim());
+        localStorage.setItem(`answers-stage-${currentStage}`, JSON.stringify(answersToSave));
       });
     });
   }
 
   function rebindEvents() {
-    // ✅ 기존 이벤트 제거
     const htmlTab = document.getElementById("html-tab");
     const cssTab = document.getElementById("css-tab");
     const clearButton = document.querySelector(".code-clear-button");
-
+  
     const newHtmlTab = htmlTab.cloneNode(true);
     const newCssTab = cssTab.cloneNode(true);
     const newClearButton = clearButton.cloneNode(true);
-
+  
     htmlTab.parentNode.replaceChild(newHtmlTab, htmlTab);
     cssTab.parentNode.replaceChild(newCssTab, cssTab);
     clearButton.parentNode.replaceChild(newClearButton, clearButton);
-
-    // ✅ 새로운 이벤트 등록
+  
     newHtmlTab.addEventListener("click", () => switchTab("html"));
     newCssTab.addEventListener("click", () => switchTab("css"));
+  
     newClearButton.addEventListener("click", () => {
       const answerArray = currentRoundData.answers;
       const dropZones = document.querySelectorAll(".code-input-problem");
   
-      let allCorrect = true;
-
+      // 1. 현재 탭 정답 저장
       const userAnswers = [];
       dropZones.forEach(zone => {
-        userAnswers.push(zone.textContent.trim());
+        const idx = parseInt(zone.dataset.index);
+        userAnswers[idx] = zone.textContent.trim();
       });
-      localStorage.setItem(`answers-stage-${currentStage}`, JSON.stringify(userAnswers));
+      localStorage.setItem(`answers-stage-${currentStage}-${currentTab}`, JSON.stringify(userAnswers));
   
-      dropZones.forEach((zone, idx) => {
+      // 2. 전체 탭에서 정답 병합
+      const allAnswers = Array(answerArray.length).fill("");
+      ["html", "css", "js"].forEach(tab => {
+        const saved = JSON.parse(localStorage.getItem(`answers-stage-${currentStage}-${tab}`));
+        if (saved && Array.isArray(saved)) {
+          saved.forEach((value, idx) => {
+            if (value && !allAnswers[idx]) {
+              allAnswers[idx] = value;
+            }
+          });
+        }
+      });
+  
+      // 3. 전체 정답 비교
+      let allCorrect = true;
+      for (let i = 0; i < answerArray.length; i++) {
+        if (allAnswers[i] !== answerArray[i]) {
+          allCorrect = false;
+          break;
+        }
+      }
+  
+      // 4. 현재 탭만 정답 표시
+      dropZones.forEach(zone => {
+        const idx = parseInt(zone.dataset.index);
         const userInput = zone.textContent.trim();
         const correctAnswer = answerArray[idx];
   
@@ -297,43 +389,38 @@ document.addEventListener("DOMContentLoaded", function () {
           zone.classList.add("code-problem-correct");
         } else {
           zone.classList.add("code-problem-wrong");
-          allCorrect = false;
         }
       });
   
+      // 5. 정답 여부에 따라 결과 처리
       if (!allCorrect) {
-        // 생명 하나 제거하면서 애니메이션
         const lives = document.querySelectorAll(".life");
         if (lives.length > 0) {
           const lastLife = lives[lives.length - 1];
           lastLife.classList.add("shake");
           document.body.classList.add("shake");
-
+  
           setTimeout(() => {
             document.body.classList.remove("shake");
-            lastLife.remove(); // 애니메이션 끝나고 제거
+            lastLife.remove();
           }, 300);
         }
         return;
       }
-
-      const savedAnswersKey = `answers-stage-${currentStage}`;
-      const answersToSave = Array.from(dropZones).map(zone => zone.textContent.trim());
-      localStorage.setItem(savedAnswersKey, JSON.stringify(answersToSave));
-
-      // 현재 스테이지 클리어 시 배경 이미지 변경
+  
+      // 6. 정답이면 스테이지 완료 처리
       const clearedLevel = document.querySelector(`.lvl-${currentStage} .level-background`);
       if (clearedLevel) {
         clearedLevel.src = "../../assets/icons/level-clear-bg.png";
       }
-
+  
       markStageAsCleared(currentStage);
-        
+  
       setTimeout(() => {
         changeStage(1);
       }, 800);
     });
-  }
+  }  
 
   function markStageAsCleared(stage) {
     let clearedStages = JSON.parse(localStorage.getItem("clearedStages")) || [];
@@ -365,6 +452,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = e.dataTransfer.getData("text/plain");
         dropZone.textContent = data;
         dropZone.style.backgroundColor = "";
+
+        saveCurrentTabAnswers();
       });
   });      
 });
