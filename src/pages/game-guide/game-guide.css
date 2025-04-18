@@ -63,14 +63,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: absolute;
 }
 
-.logo-text {
-  margin-top: 15px;
-  font-family: 'DOSSaemmul', sans-serif;
-  font-size: 30px;
-  font-weight: 500;
-}
 
 /* ✅ Progress Bar 스타일 */
 .stepper-container {
@@ -126,6 +121,7 @@ body {
   line-height: 100%;
   letter-spacing: -0.55px;
 }
+
 
 /* 버튼 */
 .button-container {

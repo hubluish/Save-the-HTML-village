@@ -55,6 +55,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  function updateContent() {
+    textContent.innerHTML = messages[currentStep];
+  
+    // 중앙 이미지 변경
+    const guideImage = document.getElementById('guide-image');
+    guideImage.src = `../../assets/icons/game-guide/game-guide_${currentStep + 1}.png`;
+  
+    // 왼쪽 섹션 이미지 및 표시 제어
+    const leftSection = document.querySelector('.left-section');
+    const leftLogo = document.getElementById('left-logo');
+    
+  
+    if (currentStep >= 2 && currentStep <= 10) {
+      leftSection.style.display = 'flex';
+      leftLogo.src = `../../assets/icons/game-guide/logo${currentStep}.png`;
+  
+    } else {
+      leftSection.style.display = 'none';
+    }
+  }
+  
+  
+  
+
   // 초기 상태
   updateProgressBar();
   updateButtons();
