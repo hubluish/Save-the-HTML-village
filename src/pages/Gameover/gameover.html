@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gameover</title>
+    <link rel="stylesheet" href="gameover.css">
+    <link rel="stylesheet" href="../../styles/variables.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- <img src="../../assets/icons/start/over_bg.png"  class="button-icon" style="width: 1440px;"> -->
+        <img src="../../assets/icons/start/gameover.png"  class="button-icon" style="width: 750px;
+        height: 300px;
+        flex-shrink: 0; margin-bottom:30px;">
+        <div class="button-Container">
+            <button class="nav-button" onclick="location.href='solve.html'" id="replayButton">
+                <img src="../../assets/icons/start/b_replay.svg"  class="button-icon" id="replayBtn">
+                다시 해볼게!
+            </button>
+            <button class="nav-button" onclick="window.close();" id="exitButton">
+                <img src="../../assets/icons/start/b_on_off.png"  class="button-icon" id="exitBtn">
+                그만 할게 .. 
+            </button>
+        </div> 
+    </div>
+    <canvas id="rainCanvas"></canvas>
+    <script src="gameover.js"></script>
+</body>
+</html>
