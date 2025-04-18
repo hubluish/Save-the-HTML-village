@@ -1,181 +1,152 @@
-/* 기본 스타일 초기화 */
+/* 기본 초기화 */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-
-  body {
-    font-family: sans-serif;
-    background: var(--deepyellow-color);
-    }
-  
-  /* --- Top Section --- */
-  #top-section {
-    display: flex;
-    margin: 50px auto 0 auto;
-    width: 85%;
-    max-width: 1225px;
-  }
-  
-  .top-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .left-rectangle {
-    width: 113px;
-    height: 70px;
-    background: var(--lightyellow-color);
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo{
-    width: 90px;
-    height: 61px;
-  }
-  
-  .logo-left{
-    width: 232px;
-    height: 151px;
-  }
-
-  .main-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    flex-direction: row;
-  }
-
-  .left-section {
-    padding-right: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .logo-text{
-    margin-top: 15px;
-    color: #000;
-    text-align: center;
-    font-family: 'DOSSaemmul', sans-serif;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 100%; /* 30px */
-    letter-spacing: -0.33px;
-  }
-
-  .stepper-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 113px;
-  }
-  
-  .stepper {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .step {
-    border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: var(--lightyellow-color)
-  }
-  
-  .step.active {
-    width: 80px;
-    height: 22px;
-    border-radius: 20px;
-    background: var(--yellow-color)
-  }
-  
-  #main-section {
-    max-width: 1225px;
-    width: 85%;
-    height: 485px;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    margin: 32px auto 0 auto;
-    background: var(--lightyellow-color);
-    border-radius: 40px;
-  }
-
-  #text-section {
-    max-width: 1225px;
-    width: 85%;
-    height: 320px;
-    background: url('../../assets/icons/textbox.png') no-repeat center center;
-    margin: 25px auto 0 auto;
-    position: relative;
-    display: flex;
-    border-radius: 40px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .button-container {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    max-width: 1225px;
-    width: 100%;
-    height: 60px;
-    position: absolute;
-    bottom: 50px;
-  }
-  
-  .text-content {
-    width: 100%;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-
-    color: #000;
-    text-align: center;
-    font-family: 'DOSSaemmul', sans-serif;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 100%; /* 50px */
-    letter-spacing: -0.55px;
-  }
-  
- .prev-btn,
-.next-btn {
-  width: 60px;
-  height: 60px;
-  flex-shrink: 0;
-  aspect-ratio: 1/1;
-  background: none; 
-  border: none;
-  padding: 0; 
-  cursor: pointer;
-  display: flex;
-  margin: auto 40px 25px 40px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.prev-btn svg,
-.next-btn svg {
+body {
+  font-family: sans-serif;
+  background: var(--deepyellow-color);
+}
+
+/* Top Section */
+#top-section {
+  display: flex;
+  margin: 50px auto 0 auto;
+  width: 85%;
+  max-width: 1225px;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.left-rectangle {
+  width: 113px;
+  height: 70px;
+  background: var(--lightyellow-color);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 90px;
+  height: 61px;
+}
+
+.logo-left {
+  width: 232px;
+  height: 151px;
+}
+
+#main-section {
+  max-width: 1225px;
+  width: 85%;
+  height: 485px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 32px auto 0 auto;
+  background: var(--lightyellow-color);
+  border-radius: 40px;
+}
+
+.left-section {
+  padding-right: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-text {
+  margin-top: 15px;
+  font-family: 'DOSSaemmul', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* ✅ Progress Bar 스타일 */
+.stepper-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 113px;
+}
+
+.progress-track {
+  width: 235px;
+  height: 46px;
+  padding: 3.8px 7.6px;
+  border-radius: 122.8px;
+  background: var(--lightyellow-color, #FFFAD2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 383.8px;
+  background: linear-gradient(270deg, #EDF9D0 -15.6%, #8EC200 115.6%);
+  transition: width 0.3s ease-in-out;
+}
+
+/* Text Section */
+#text-section {
+  max-width: 1225px;
+  width: 85%;
+  height: 320px;
+  background: url('../../assets/icons/textbox.png') no-repeat center center;
+  margin: 25px auto 0 auto;
+  position: relative;
+  display: flex;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-content {
+  width: 100%;
+  padding: 20px;
+  color: #000;
+  text-align: center;
+  font-family: 'DOSSaemmul', sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.55px;
+}
+
+/* 버튼 */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+}
+
+.prev-btn, .next-btn {
+  width: 60px;
+  height: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin: 0 40px;
+}
+
+.prev-btn svg, .next-btn svg {
   width: 100%;
   height: 100%;
 }
-
-  
