@@ -143,16 +143,32 @@
             "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[1]]마을 재건",
             "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[2]]",
             "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[3]]집 세우기[[4]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[5]]길 만들기[[6]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[7]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[8]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;[[9]]",
             "&lt;/body&gt;"
         ],
-        "jsCode": [
-            "function playAudio() {",
-            "&nbsp;&nbsp;const [[3]] = document.getElementById('audio');",
-            "&nbsp;&nbsp;[[4]].currentTime = 0;",
-            "&nbsp;&nbsp;[[5]].play();",
-            "}"
+        "problemButtons": ["<li>", "</li>", "<ol>", "</ol>", "<ul>", "</ul>"],
+        "answers": ["<ol>", "<li>", "<ul>", "<li>", "</li>", "<li>", "</li>", "</ul>", "</li>", "</ol>"]
+    },
+    {
+        "id": 7,
+        "title": "토글을 만들어보라뭉!",
+        "problemText": "윽 세부사항이 왤케 많냐!<br>안건을 클릭하면 펼쳐지도록 만들어보자자!",
+        "defaultCode": [
+            "&lt;body&gt;",
+            "&nbsp;&nbsp;&lt;h2&gt;회의 안건&lt;/h2&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;[[0]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[1]]1. 마을 재건[[2]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;집 세우기&lt;/li&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;길 만들기&lt;/li&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;[[3]]",
+            "&lt;/body&gt;"
         ],
-        "problemButtons": ["video", "audio", "sound", "source"],
-        "answers": ["audio", "source", "audio", "audio", "audio", "audio"]
+        "problemButtons": ["<summary>", "</summary>", "<details>", "</details>"],
+        "answers": ["<details>", "<summary>", "</summary>", "</details>"]
     }
 ]
