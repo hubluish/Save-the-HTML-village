@@ -124,3 +124,78 @@ function getMiddleContent(stepIndex) {
       `;
   }
 }
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const loadingScreen = document.getElementById("loading-screen");
+    if (loadingScreen) {
+      loadingScreen.style.display = "none";
+    }
+  }, 5000); // ⏳ 2.5초 후에 로딩화면 제거
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const message = "전체 화면으로 바꿔달라뭉!";
+  const typingTarget = document.getElementById("typing-text");
+  let index = 0;
+
+  function typeOneLetter() {
+    if (index < message.length) {
+      typingTarget.textContent += message.charAt(index);
+      index++;
+      setTimeout(typeOneLetter, 170); // 글자 출력 간격
+    }
+  }
+
+  if (typingTarget) {
+    typingTarget.textContent = ""; // 초기화
+    typeOneLetter();
+  }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const mung1 = document.getElementById("bouncing-mung1");
+  const mung2 = document.getElementById("bouncing-mung2");
+
+  let x1 = 100, y1 = 100, dx1 = 6, dy1 = 6;
+  let x2 = 1300, y2 = 600, dx2 = -4, dy2 = 5;
+
+  function moveMungs() {
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    const mung1Width = mung1.offsetWidth;
+    const mung1Height = mung1.offsetHeight;
+
+    const mung2Width = mung2.offsetWidth;
+    const mung2Height = mung2.offsetHeight;
+
+    // mung1 위치 갱신
+    x1 += dx1;
+    y1 += dy1;
+
+    if (x1 + mung1Width >= screenWidth || x1 <= 0) dx1 *= -1;
+    if (y1 + mung1Height >= screenHeight || y1 <= 0) dy1 *= -1;
+
+    mung1.style.left = x1 + "px";
+    mung1.style.top = y1 + "px";
+
+    // mung2 위치 갱신
+    x2 += dx2;
+    y2 += dy2;
+
+    if (x2 + mung2Width >= screenWidth || x2 <= 0) dx2 *= -1;
+    if (y2 + mung2Height >= screenHeight || y2 <= 0) dy2 *= -1;
+
+    mung2.style.left = x2 + "px";
+    mung2.style.top = y2 + "px";
+
+    requestAnimationFrame(moveMungs);
+  }
+
+  if (mung1 && mung2) {
+    mung1.style.position = "absolute";
+    mung2.style.position = "absolute";
+    moveMungs();
+  }
+});

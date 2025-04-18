@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // next-btn 클릭 시 clear.html로 이동
   document.querySelector('.next-btn').addEventListener('click', function () {
     if (currentStep === totalSteps - 1) {
-      window.location.href = '..\Clear\clear.html';
+      window.location.href = '../Clear/clear.html';
     } else {
       currentStep++;
       updateSteps();

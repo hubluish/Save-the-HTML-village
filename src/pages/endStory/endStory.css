@@ -16,6 +16,7 @@
     align-items: center;
     gap: 10px;
     background: var(--deepYellow, #FFD66C);
+    overflow: hidden;
   }
   
   .body-content{
