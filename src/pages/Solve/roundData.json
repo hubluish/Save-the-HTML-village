@@ -75,13 +75,84 @@
         "problemText": "나무가 이상하다!<br>나무를 정렬해보자!",
         "defaultCode": [
             "&lt;body&gt;",
-            "&nbsp;&nbsp;&lt;[[0]]&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;[[1]] HTML [[2]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;[[3]] CSS [[4]]",
-            "&nbsp;&nbsp;&lt;[[5]]&gt;",
+            "&nbsp;&nbsp;&lt;div class=&quot;forest&quot;&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;tree.png&quot; alt=&quot;나무1&quot; class=&quot;tree&quot;&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;tree.png&quot; alt=&quot;나무2&quot; class=&quot;tree&quot;&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;tree.png&quot; alt=&quot;나무3&quot; class=&quot;tree&quot;&gt;",
+            "&nbsp;&nbsp;&lt;/div&gt;",
             "&lt;/body&gt;"
         ],
-        "problemButtons": ["<ul>", "<li>", "</li>", "</ul>"],
-        "answers": ["<ul>", "<li>", "</li>", "<li>", "</li>", "</ul>"]      
+        "cssCode": [
+            ".forest {",
+            "  display: [[0]];",
+            "  flex-direction: [[1]];",
+            "  justify-content: center;",
+            "  gap: 8px;",
+            "}",
+            ".tree {",
+            "  width: 172px;",
+            "  height: 262px;",
+            "}"
+        ],
+        "problemButtons": ["row", "grid", "flex", "column"],
+        "answers": ["flex", "row"]
+    },
+    {
+        "id": 4,
+        "title": "새를 날려 보내달라뭉!",
+        "problemText": "헉! 저기에 새가 있잖아?<br>새를 나무로 보내보자!",
+        "cssCode": [
+            ".bird-container {",
+            "  display: flex;",
+            "  justify-content: [[0]];",
+            "  align-items: [[1]];",
+            "}"
+        ],
+        "problemButtons": ["space-between", "flex-start", "space-around", "center"],
+        "answers": ["space-around", "center"]
+    },
+    {
+        "id": 5,
+        "title": "새소리를 듣고싶다뭉!",
+        "problemText": "새들은 노래부르는 걸 좋아해!<br>새를 클릭하면 새소리가 들리게 해보자!",
+        "defaultCode": [
+            "&lt;body&gt;",
+            "&nbsp;&nbsp;&lt;[[0]] id=&quot;audio&quot;&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&lt;[[1]] src=&quot;village.mp3&quot; type=&quot;audio/mpeg&quot;&gt;",
+            "&nbsp;&nbsp;&lt;/[[2]]&gt;",
+            "&lt;/body&gt;"
+        ],
+        "jsCode": [
+            "function playAudio() {",
+            "&nbsp;&nbsp;const [[3]] = document.getElementById('audio');",
+            "&nbsp;&nbsp;[[4]].currentTime = 0;",
+            "&nbsp;&nbsp;[[5]].play();",
+            "}"
+        ],
+        "problemButtons": ["video", "audio", "sound", "source"],
+        "answers": ["audio", "source", "audio", "audio", "audio", "audio"]
+    },
+    {
+        "id": 6,
+        "title": "리스트를 구성하라뭉!",
+        "problemText": "회의 안건이 너무 더러워!<br>리스트를 이용하여 정리해보자!",
+        "defaultCode": [
+            "&lt;body&gt;",
+            "&nbsp;&nbsp;&lt;h2&gt;회의 안건&lt;/h2&gt;",
+            "&nbsp;&nbsp;&nbsp;&nbsp;[[0]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[1]]마을 재건",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[2]]",
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[3]]집 세우기[[4]]",
+            "&lt;/body&gt;"
+        ],
+        "jsCode": [
+            "function playAudio() {",
+            "&nbsp;&nbsp;const [[3]] = document.getElementById('audio');",
+            "&nbsp;&nbsp;[[4]].currentTime = 0;",
+            "&nbsp;&nbsp;[[5]].play();",
+            "}"
+        ],
+        "problemButtons": ["video", "audio", "sound", "source"],
+        "answers": ["audio", "source", "audio", "audio", "audio", "audio"]
     }
 ]

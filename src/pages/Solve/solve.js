@@ -1,3 +1,4 @@
+// 페이지가 새로고침될 때 정답 및 진행 정보 초기화
 if (performance.getEntriesByType("navigation")[0].type === "reload") {
   localStorage.removeItem("clearedStages");
   for (let i = 1; i <= 10; i++) {
@@ -8,6 +9,7 @@ if (performance.getEntriesByType("navigation")[0].type === "reload") {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // 주요 UI 요소 선택
   const leftArrow = document.querySelector(".left-arrow");
   const rightArrow = document.querySelector(".right-arrow");
   const stageDisplay = document.querySelector(".current-stage");
@@ -19,17 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentRoundData = null;
   const maxStage = 10;
 
-  window.addEventListener("beforeunload", () => {
-    localStorage.removeItem("clearedStages");
-    for (let i = 1; i <= 10; i++) {
-      localStorage.removeItem(`answers-stage-${i}`);
-    }
-  });
-
+  // 현재 스테이지 표시 업데이트
   function updateStageDisplay() {
     stageDisplay.textContent = `${currentStage}/${maxStage}`;
   }
 
+  // 문제 버튼(드래그 가능) 이벤트 바인딩
   function applyDragEvents() {
     document.querySelectorAll(".problem-button").forEach(button => {
       button.setAttribute("draggable", true);
@@ -39,10 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // 현재 탭의 답변 저장
   function saveCurrentTabAnswers() {
     const zones = document.querySelectorAll(".code-input-problem");
     const saved = [];
-  
+    
     zones.forEach(zone => {
       const idx = parseInt(zone.dataset.index);
       saved[idx] = zone.textContent.trim();
@@ -51,27 +49,33 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem(`answers-stage-${currentStage}-${currentTab}`, JSON.stringify(saved));
   }
 
+  // 탭 전환 (탭 버튼 및 코드 내용 재렌더)
   function switchTab(tab) {
-    if (!currentRoundData) return;
-    
+    // 1. 이전 탭 기준으로 저장
+    const previousTab = currentTab;
+    const zones = document.querySelectorAll(".code-input-problem");
+    const saved = [];
+  
+    zones.forEach(zone => {
+      const idx = parseInt(zone.dataset.index);
+      saved[idx] = zone.textContent.trim();
+    });
+  
+    const key = `answers-stage-${currentStage}-${previousTab}`;
+    localStorage.setItem(key, JSON.stringify(saved));
+      
+    // 2. 탭 변경
+    currentTab = tab;
     saveCurrentTabAnswers();
 
-    currentTab = tab;
-  
+    // 3. 나머지 탭 관련 UI 로직
     const tabContainer = document.querySelector(".code-tab-container");
-    tabContainer.innerHTML = ""; // 기존 탭 초기화
+    tabContainer.innerHTML = "";
   
     const tabs = [];
-  
-    if (currentRoundData.defaultCode) {
-      tabs.push("html");
-    }
-    if (currentRoundData.cssCode) {
-      tabs.push("css");
-    }
-    if (currentRoundData.jsCode) {
-      tabs.push("js");
-    }
+    if (currentRoundData.defaultCode) tabs.push("html");
+    if (currentRoundData.cssCode) tabs.push("css");
+    if (currentRoundData.jsCode) tabs.push("js");
   
     tabs.forEach(type => {
       const tabEl = document.createElement("div");
@@ -84,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
       tabEl.appendChild(textEl);
       tabEl.addEventListener("click", () => switchTab(type));
-  
       tabContainer.appendChild(tabEl);
     });
   
@@ -97,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     restoreTabAnswers();
   }  
 
+  // 스테이지 데이터 로드
   function loadStageData(stageId) {
       fetch("roundData.json")
         .then(res => res.json())
@@ -140,6 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  // 스테이지 이동 (이전/다음)
   function changeStage(delta) {
     const next = currentStage + delta;
     if (next < 1 || next > maxStage) {
@@ -151,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadStageData(currentStage);
   }
 
+  // 모든 탭의 정답을 통합해 정답 여부 확인
   function checkAnswerCorrect() {
     const answerArray = currentRoundData.answers;
     const allAnswers = Array(answerArray.length).fill("");
@@ -181,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return allAnswers.every((val, idx) => val === answerArray[idx]);
   }  
 
+  // 코드(문제) 영역 렌더링 + 드롭 이벤트 바인딩
   function renderCode(codeLines) {
       const display = document.getElementById("code-display");
       const lineNumberContainer = document.querySelector(".code-line");
@@ -205,19 +212,14 @@ document.addEventListener("DOMContentLoaded", function () {
           display.appendChild(container);
       });
 
-      bindDropEvents();
-
-      // 슬롯 초기화 + 정확한 인덱스 기준으로 초기화
-      const zones = document.querySelectorAll(".code-input-problem");
-      zones.forEach(zone => {
-        zone.textContent = "";
-        zone.classList.remove("code-problem-correct", "code-problem-wrong");
+      bindDropEvents(() => {
+        saveCurrentTabAnswers(); // 이 안에서 currentStage와 currentTab을 기반으로 저장되므로 문제 없어야 정상
       });
 
-      // 2. 정답 복원
-      restoreTabAnswers();
+      restoreTabAnswers();  // 정답 복원
   }
 
+  // 현재 탭의 정답(입력값) 복원
   function restoreTabAnswers() {
     const saved = JSON.parse(localStorage.getItem(`answers-stage-${currentStage}-${currentTab}`)) || [];
     const zones = document.querySelectorAll(".code-input-problem");
@@ -228,18 +230,19 @@ document.addEventListener("DOMContentLoaded", function () {
         zone.textContent = saved[idx];
       }
     });
-  }  
+  }
 
   // 초기 로딩
   updateStageDisplay();
   loadStageData(currentStage);
 
-  // 좌우 화살표 클릭
+  // 좌우 화살표 클릭 이벤트
   leftArrow.addEventListener("click", () => changeStage(-1));
   rightArrow.addEventListener("click", () => {
     const clearedStages = JSON.parse(localStorage.getItem("clearedStages")) || [];
 
     if (!clearedStages.includes(currentStage)) {
+      
       if (!checkAnswerCorrect()) {
         alert("정답을 모두 맞혀야 다음 스테이지로 넘어갈 수 있어요! 🛑");
         return;
@@ -248,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     changeStage(1);    
   });
 
+  // 클리어한 경로 선 색상 표시
   function updateClearedPaths() {
     const clearedStages = JSON.parse(localStorage.getItem("clearedStages")) || [];
   
@@ -277,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           updateClearedPaths();
     
-          // 닫기 버튼 작동하게 설정
+          // 닫기 버튼 이벤트
           const closeBtn = stageMap.querySelector(".stage-close-button");
           closeBtn.addEventListener("click", () => {
               container.innerHTML = "";
@@ -300,9 +304,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 
+  // 탭 클릭(직접 바인딩)
   document.getElementById("html-tab").addEventListener("click", () => switchTab("html"));
   document.getElementById("css-tab").addEventListener("click", () => switchTab("css"));
 
+  // 드롭 이벤트 바인딩
   function bindDropEvents() {
     document.querySelectorAll(".code-input-problem").forEach(dropZone => {
       dropZone.addEventListener("dragover", (e) => {
@@ -321,12 +327,14 @@ document.addEventListener("DOMContentLoaded", function () {
         dropZone.style.backgroundColor = "";
 
         // 드래그해서 놓을 때마다 저장
-        const answersToSave = Array.from(allZones).map(z => z.textContent.trim());
-        localStorage.setItem(`answers-stage-${currentStage}`, JSON.stringify(answersToSave));
+        const zones = document.querySelectorAll(".code-input-problem");
+        const answersToSave = Array.from(zones).map(z => z.textContent.trim());
+        localStorage.setItem(`answers-stage-${currentStage}-${currentTab}`, JSON.stringify(answersToSave));
       });
     });
   }
 
+  // 탭, 클리어 버튼 등 재바인딩 (이벤트 중복 대비)
   function rebindEvents() {
     const htmlTab = document.getElementById("html-tab");
     const cssTab = document.getElementById("css-tab");
@@ -392,7 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
   
-      // 5. 정답 여부에 따라 결과 처리
+      // 5. 정답 여부에 따라 목숨 차감
       if (!allCorrect) {
         const lives = document.querySelectorAll(".life");
         if (lives.length > 0) {
@@ -422,6 +430,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }  
 
+  // 스테이지 완료시 클리어 표시 및 경로 업데이트
   function markStageAsCleared(stage) {
     let clearedStages = JSON.parse(localStorage.getItem("clearedStages")) || [];
     if (!clearedStages.includes(stage)) {
@@ -435,25 +444,4 @@ document.addEventListener("DOMContentLoaded", function () {
       pathToNext.setAttribute("stroke", "#F5D611");
     }
   }
-  
-  // 드롭 기능 (고정 영역 대상)
-  document.querySelectorAll(".code-input-problem").forEach(dropZone => {
-      dropZone.addEventListener("dragover", (e) => {
-        e.preventDefault(); // drop 허용
-        dropZone.style.backgroundColor = "#A4D4AE";
-      });
-    
-      dropZone.addEventListener("dragleave", () => {
-        dropZone.style.backgroundColor = "";
-      });
-    
-      dropZone.addEventListener("drop", (e) => {
-        e.preventDefault();
-        const data = e.dataTransfer.getData("text/plain");
-        dropZone.textContent = data;
-        dropZone.style.backgroundColor = "";
-
-        saveCurrentTabAnswers();
-      });
-  });      
 });

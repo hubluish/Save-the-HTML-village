@@ -354,7 +354,7 @@ body.shake {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 5px;
+    margin-bottom: 4.5px;
     flex-shrink: 0;
 }
 
