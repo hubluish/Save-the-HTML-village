@@ -1,0 +1,146 @@
+/* 기본 설정 */
+body {
+  font-family: 'DOSSaemmul';
+  background: #a8df65;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 모달 배경 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 모달 내부 레이아웃 */
+.mainContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 563px;
+  height: 775px;
+}
+
+/* 배경 이미지 */
+.background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 30px;
+  object-fit: cover;
+  text-align: center;
+}
+
+/* 계산기 영역 */
+.bodyContainer {
+  position: relative;
+  z-index: 0;
+  width: 440px;
+  height: 593px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 제목 */
+.title {
+  color: #fff;
+  text-align: center;
+  -webkit-text-stroke: 1px #fff;
+  font-family: 'DOSSaemmul';
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: -1.1px;
+  margin: 0 0 5px;
+}
+
+/* 입력 영역 */
+.inputbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  height: 301px;
+  width: 274px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.inputRow {
+  font-family: 'Bookk Gothic';
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.inputRow label {
+  font-size: 40px;
+  font-weight: 300;
+  color: black;
+  letter-spacing: -0.88px;
+}
+
+.inputRow input {
+  width: 90px;
+  padding: 8px;
+  font-size: 40px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.inputRow span {
+  font-size: 50px;
+  color: black;
+}
+
+/* 버튼 영역 */
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 100%;
+  height: 130px;
+  margin-top: 30px;
+}
+
+.buttons button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 50px;
+  font-family: 'Bookk Gothic';
+  border: none;
+  cursor: pointer;
+  background: lightyellow;
+  transition: background 0.2s, transform 0.1s ease-in-out; /* transform에 대한 transition 추가 */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons button:active {
+  transform: scale(0.9); /* 클릭할 때 버튼 크기 축소 */
+}
+
+.buttons button:hover {
+  background: black;
+  color: lightyellow;
+}

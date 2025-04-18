@@ -1,0 +1,515 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+}
+
+/* 스크롤바 고려해서 넘침 방지 */
+body {
+    margin: 0;
+    overflow: hidden;
+    padding: 50px 107px 50px 108px;
+    background: var(--deepyellow-color);
+}
+
+body.shake {
+    animation: shake 0.3s ease;
+}
+
+.solve-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 32px;
+    flex-shrink: 0;
+}
+
+.solve-header {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.left-box {
+    display: flex;
+    flex-direction: row;
+    width: 226px;
+    height: 70px;
+    padding:0 48px;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.logo-life-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.logo-container {
+    display: flex;
+    padding: 11px 0px 10.385px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 74.706px;
+    height: 48.615px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.life-container {
+    display: flex;
+    padding: 15px 0px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.life {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    animation: pop-in 0.3s ease-in;
+}
+  
+.life.shake {
+    animation: shake 0.3s ease-in-out;
+}  
+
+.problem-title-container {
+    width: 500px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.problem-title {
+    color: #F2AF00;
+    text-align: center;
+    font-family: "Hakgyoansim Dunggeunmiso TTF";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 180%; /* 72px */
+    letter-spacing: -0.44px;
+}
+
+.stage-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    gap: 6px;
+    background: var(--lightyellow-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.left-arrow {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.right-arrow {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.current-stage {
+    width: 135px;
+    color: var(--deepgreen-color);
+    text-align: center;
+    font-family: DOSSaemmul;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 58px */
+    letter-spacing: -0.638px;
+    cursor: pointer;
+}
+
+.current-stage:hover {
+    color: #F2AF00;
+}
+
+/* 문제 풀이 영역 */
+.solve-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.problem-code-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    flex: 1;
+}
+
+.problem-box {
+    display: flex;
+    width: 100%;
+    height: 220px;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+    gap: 27px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.problem-text{
+    color: rgba(0, 0, 0, 0.80);
+    font-family: DOSSaemmul;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 54px */
+    letter-spacing: -0.792px;
+}
+
+.problem-button-container {
+    display: flex;
+    height: 34px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 42px;
+}
+
+.problem-button {
+    height: 34px;
+    padding: 2px 7px;
+    text-align: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--green-color);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    color: var(--black-color);
+    font-family: "Cascadia Code PL";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    letter-spacing: -0.46px;
+    cursor: pointer;
+}
+
+.problem-button:hover {
+    background: var(--deepgreen-color);
+    color: var(--lightyellow-color);
+}
+
+.problem-button:active {
+    animation: wiggle 0.3s ease;
+}
+
+.code-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.code-tab-container {
+    display: flex;
+    width: 336px;
+    height: 27px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.code-tab {
+    color: var(--black-color);
+    width: 112px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 20px 40px 0 0;
+    background: var(--lightyellow-color);
+    cursor: pointer;
+}
+
+.code-tab-deactive {
+    color: var(--default-color);
+    width: 112px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 20px 40px 0 0;
+    background: var(--deepgreen-color);
+    cursor: pointer;
+}
+
+.code-tab-deactive:hover {
+    background: var(--green-color);
+    color: var(--black-color);
+}
+
+.code-tab-text {
+    text-align: center;
+    font-family: DOSSaemmul;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 30px */
+    letter-spacing: -0.22px;
+    cursor: pointer;
+}
+
+.code-input-container {
+    display: flex;
+    width: 100%;
+    height: 560px;
+    flex-shrink: 0;
+}
+
+.code-line {
+    width: 32px;
+    height: 100%;
+    padding: 20px 6px;
+    flex-shrink: 0;
+    border-radius: 0px 0px 0px 40px;
+    box-sizing: border-box;
+    background: var(--greenGradiant);
+}
+
+.code-line-number {
+    width: 21px;
+    height: 21px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    background: var(--lightyellow-color);
+
+    color: #000;
+    text-align: center;
+    font-family: DOSSaemmul;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 22.5px */
+    letter-spacing: -0.165px;
+}
+
+.code-input {
+    width: 100%;
+    height: 560px;
+    border-radius: 0px 40px 40px 0px;
+    background: var(--lightyellow-color);
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.code-editor {
+    font-family: "Cascadia Code", monospace;
+    white-space: pre-wrap;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+    border-radius: 0px 40px 40px 0px;
+    height: auto;
+    overflow-y: auto;
+}  
+
+.code-input-text {
+    color: var(--black-color);
+    font-family: "Cascadia Code PL";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.368px;
+}
+
+.code-problem-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4.5px;
+    flex-shrink: 0;
+}
+
+.code-input-problem {
+    display: flex;
+    width: auto;
+    min-width: 46px;
+    padding: 2px 6px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--green-color);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    font-family: "Cascadia Code PL";
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.code-problem-correct {
+    width: auto;
+    min-width: 46px;
+    padding: 2px 6px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--lightblue-color);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    animation: correct-flash 0.6s ease;
+}
+
+.code-problem-wrong {
+    width: auto;
+    min-width: 46px;
+    padding: 2px 6px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--lightred-color);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.code-problem-wrong:hover {
+    background: var(--deepred-color);
+}
+
+.code-clear-button {
+    display: flex;
+    justify-content: center;
+    width: 111.429px;
+    height: 39px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--green-color);
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25) inset;
+
+    color: var(--black-color);
+    font-family: DOSSaemmul;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 190%; /* 40px */
+    letter-spacing: -0.231px;
+
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+    cursor: pointer;
+}
+
+.code-clear-button:hover {
+    background: var(--deepgreen-color);
+    color: var(--lightyellow-color);
+    animation: bounce-loop 0.45s infinite ease-in-out;
+}
+
+.code-clear-button:active {
+    transform: scale(0.95);
+}
+
+.map-container {
+    width: 600px;
+    height: 822px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--lightyellow-color);
+}
+
+.mini-map {
+    width: 200px;
+    height: 274px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: var(--deepyellow-color);
+    margin-left: 380px;
+    margin-top: 20px;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-7px); }
+    50% { transform: translateX(7px); }
+    75% { transform: translateX(-7px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes bounce-loop {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+}
+
+@keyframes pop-in {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    80% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+@keyframes life-pop-out {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+}
+
+@keyframes correct-flash {
+    0%, 100% { background-color: #A4D4AE; }
+    50% { background-color: #BFFFCB; }
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0); }
+}

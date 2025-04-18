@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>endstory</title>
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="../../../styles/variables.module.css">
+  </head>
+  <body>
+    <!-- 모달 전체 박스 -->
+    <div id="customModal" class="modal">
+      <img src="../../../assets/icons/story_popup.png" class="bg-image" style="transform: scale(1.8); "/>
+      <div class="modal-content">
+        <p id="modal-text">마을을 구하시겠습니까 ?</p>
+        <div class="modal-buttons">
+          <button class="modal-button" onclick="window.parent.location.href = '../../start/start.html'; window.parent.document.getElementById('modal-iframe').style.display='none'">> 네</button>
+          <button class="modal-button" onclick="window.parent.location.href = '../../start/start.html'; window.parent.document.getElementById('modal-iframe').style.display='none'">> yes!!!</button>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

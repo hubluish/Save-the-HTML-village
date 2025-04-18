@@ -1,0 +1,87 @@
+/* 모달 오버레이 */
+.stage-map-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.stage-map {
+    width: 1225px;
+    height: 924px;
+    border-radius: 40px;
+    border: 5px solid var(--deepgreen-color);
+    background: rgba(224, 241, 113, 0.68);
+    box-shadow: 13px 13px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.stage-close-button {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+}
+
+.close-icon {
+    width: 42px;
+    height: 42px;
+}
+
+.stage-background {
+    width: 1050px;
+    height: 871px;
+    flex-shrink: 0;
+}
+
+.level-background {
+    width: 120px;
+    height: 117px;
+    position: absolute;
+}
+
+.lvl-1 { top: 581px; left: 183px; }
+.lvl-2 { top: 680px; left: 396px; }
+.lvl-3 { top: 674px; left: 629px; }
+.lvl-4 { top: 624px; left: 813px; }
+.lvl-5 { top: 486px; left: 939px; }
+.lvl-6 { top: 407px; left: 778px; }
+.lvl-7 { top: 502px; left: 612px; }
+.lvl-8 { top: 486px; left: 410px; }
+.lvl-9 { top: 374px; left: 276px; }
+.lvl-10 { top: 320px; left: 562px; }
+
+.level-wrapper {
+    position: absolute;
+    width: 120px;
+    height: 117px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+  }
+  
+  .level-number {
+    position: absolute;
+    z-index: 2;
+    color: var(--black-color);
+    text-align: center;
+    font-family: DOSSaemmul;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    user-select: none;
+    pointer-events: none;
+}

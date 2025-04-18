@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save-the-HTML-village</title>
+    <link rel="icon" href="../../assets/icons/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="solve.css">
+    <link rel="stylesheet" href="levelStage.css">
+    <link rel="stylesheet" href="../../styles/variables.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="solve-container">
+            <!-- Header Section -->
+            <header class="solve-header">
+                <div class="logo-life-container">
+                    <div class="left-box">
+                        <div class="logo-container">
+                            <img src="../../assets/icons/logo.png" class="logo" alt="logo">
+                        </div>
+                        <div class="life-container">
+                            <img src="../../assets/icons/life.png" class="life" alt="life">
+                            <img src="../../assets/icons/life.png" class="life" alt="life">
+                            <img src="../../assets/icons/life.png" class="life" alt="life">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="problem-title-container">
+                    <div class="problem-title"></div>
+                </div>
+                <div class="stage-box">
+                    <img src="../../assets/icons/left-arrow.png" class="left-arrow" alt="left-arrow">
+                    <div class="current-stage"></div>
+                    <img src="../../assets/icons/right-arrow.png" class="right-arrow" alt="right-arrow">
+                </div>
+            </header>
+
+            <!-- Main Content Section -->
+            <div class="solve-content">
+                <div class="problem-code-container">
+                    <!-- Problem Section -->
+                    <div class="problem-box">
+                        <div class="problem-text"></div>
+                        <div class="problem-button-container"></div>
+                    </div>
+
+                    <!-- Code Section -->
+                    <div class="code-container">
+                        <div class="code-tab-container">
+                            <div id="html-tab" class="code-tab-button code-tab">
+                                <div class="code-tab-text">HTML</div>
+                            </div>
+                            <div id="css-tab" class="code-tab-button code-tab-deactive">
+                                <div class="code-tab-text">CSS</div>
+                            </div>
+                        </div>
+                        <div class="code-input-container">
+                            <div class="code-line">
+                                <div class="code-line-number">1</div>
+                            </div>
+                            <div class="code-input">
+                                <!-- HTML -->
+                                <div id="code-display" class="code-editor"></div>
+                                <div class="code-clear-button">완료</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Answer Section -->
+                <div class="map-container">
+                    <div class="mini-map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="stage-map-container"></div>
+
+    <script src="solve.js" defer></script>
+</body>
+</html>
