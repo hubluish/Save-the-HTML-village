@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
     }
-    changeStage(1);    
+    changeStage(1);
   });
 
   // 클리어한 경로 선 색상 표시
@@ -411,7 +411,14 @@ document.addEventListener("DOMContentLoaded", function () {
           setTimeout(() => {
             document.body.classList.remove("shake");
             lastLife.remove();
-          }, 300);
+          
+            // 남은 목숨이 없으면 gameover.html로 이동
+            if (document.querySelectorAll(".life").length === 0) {
+              setTimeout(() => {
+                window.location.href = "../Gameover/gameover.html";
+              }, 500); // 애니메이션 여유시간
+            }
+          }, 300);          
         }
         return;
       }
@@ -425,8 +432,15 @@ document.addEventListener("DOMContentLoaded", function () {
       markStageAsCleared(currentStage);
   
       setTimeout(() => {
+        // 모든 문제를 클리어했는지 검사
+        const clearedStages = JSON.parse(localStorage.getItem("clearedStages")) || [];
+        if (clearedStages.length === maxStage) {
+          window.location.href = "../EndStory/endStory.html";
+          return;
+        }
+      
         changeStage(1);
-      }, 800);
+      }, 800);      
     });
   }  
 
