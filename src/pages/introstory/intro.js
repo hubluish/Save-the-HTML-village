@@ -131,11 +131,11 @@ window.addEventListener("load", () => {
     if (loadingScreen) {
       loadingScreen.style.display = "none";
     }
-  }, 5000); // ⏳ 2.5초 후에 로딩화면 제거
+  }, 5000); // 2.5초 후에 로딩화면 제거
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  const message = "전체 화면으로 바꿔달라뭉!";
+  const message = "F11을 눌러서 전체 화면으로 바꿔달라뭉!";
   const typingTarget = document.getElementById("typing-text");
   let index = 0;
 
