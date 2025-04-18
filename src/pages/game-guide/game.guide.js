@@ -28,10 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     progressBar.style.width = `${percentage}%`;
   }
 
-  function updateContent() {
-    textContent.innerHTML = messages[currentStep];
-  }
-
   function updateButtons() {
     prevBtn.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
     nextBtn.style.visibility = currentStep === totalSteps - 1 ? 'hidden' : 'visible';
@@ -58,23 +54,30 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateContent() {
     textContent.innerHTML = messages[currentStep];
   
-    // 중앙 이미지 변경
+    const mainSection = document.getElementById('main-section');
     const guideImage = document.getElementById('guide-image');
-    guideImage.src = `../../assets/icons/game-guide/game-guide_${currentStep + 1}.png`;
-  
-    // 왼쪽 섹션 이미지 및 표시 제어
     const leftSection = document.querySelector('.left-section');
     const leftLogo = document.getElementById('left-logo');
-    
   
+    // ✅ 메인 섹션 배경 이미지 6번 페이지(currentStep === 5)에서만 적용
+    if (currentStep === 1) {
+      mainSection.style.background = 'url("../../assets/icons/game-guide/game-guide_2_background.png") no-repeat center / cover';
+    } else {
+      mainSection.style.background = 'var(--lightyellow-color)';
+    }
+  
+    // ✅ guide 이미지 변경
+    guideImage.src = `../../assets/icons/game-guide/game-guide_${currentStep + 1}.png`;
+  
+    // ✅ 왼쪽 섹션 로고 처리
     if (currentStep >= 2 && currentStep <= 10) {
       leftSection.style.display = 'flex';
       leftLogo.src = `../../assets/icons/game-guide/logo${currentStep}.png`;
-  
     } else {
       leftSection.style.display = 'none';
     }
   }
+  
   
   
   

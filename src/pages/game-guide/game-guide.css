@@ -41,7 +41,6 @@ body {
 
 .logo-left {
   width: 232px;
-  height: 151px;
 }
 
 #main-section {
@@ -53,7 +52,6 @@ body {
   justify-content: center;
   align-items: center;
   margin: 32px auto 0 auto;
-  background: var(--lightyellow-color);
   border-radius: 40px;
 }
 
