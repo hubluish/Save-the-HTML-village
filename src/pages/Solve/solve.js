@@ -243,6 +243,13 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       restoreTabAnswers();  // 정답 복원
+
+      const codeLine = document.querySelector(".code-line");
+      const codeInput = document.querySelector(".code-input");
+
+      codeInput.addEventListener("scroll", () => {
+        codeLine.scrollTop = codeInput.scrollTop;
+      });
   }
 
   // 현재 탭의 정답(입력값) 복원
