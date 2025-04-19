@@ -50,7 +50,7 @@
         "problemText": "&lt;a&gt; 태그와 road id를 사용해서 길을 만들어봐!",
         "defaultCode": [
             "&lt;body&gt;",
-            "    [[0]] href=&quot;forest.html&quot; id=&quot;road&quot;&gt;길 따라가기 →[[1]]",
+            "&emsp;[[0]] href=&quot;forest.html&quot; id=&quot;road&quot;&gt;길 따라가기 →[[1]]",
             "&lt;/body&gt;"
           ],
         "cssCode": [
@@ -122,13 +122,13 @@
         ],
         "jsCode": [
             "function playAudio() {",
-            "    const [[3]] = document.getElementById('audio');",
-            "    [[4]].currentTime = 0;",
-            "    [[5]].play();",
+            "    const audio = document.getElementById('audio');",
+            "&emsp;[[3]].currentTime = 0;",
+            "&emsp;[[4]].play();",
             "}"
         ],
         "problemButtons": ["video", "audio", "sound", "source"],
-        "answers": ["audio", "source", "audio", "audio", "audio", "audio"]
+        "answers": ["audio", "source", "audio", "audio", "audio"]
     },
     {
         "id": 6,
@@ -137,14 +137,14 @@
         "defaultCode": [
             "&lt;body&gt;",
             "    &lt;h2&gt;회의 안건&lt;/h2&gt;",
-            "        [[0]]",
-            "            [[1]]마을 재건",
-            "                [[2]]",
-            "                    [[3]]집 세우기[[4]]",
-            "                    [[5]]길 만들기[[6]]",
-            "                [[7]]",
-            "            [[8]]",
-            "        [[9]]",
+            "&emsp;&emsp;[[0]]",
+            "&emsp;&emsp;&emsp;[[1]]마을 재건",
+            "&emsp;&emsp;&emsp;&emsp;[[2]]",
+            "&emsp;&emsp;&emsp;&emsp;&emsp;[[3]]집 세우기[[4]]",
+            "&emsp;&emsp;&emsp;&emsp;&emsp;[[5]]길 만들기[[6]]",
+            "&emsp;&emsp;&emsp;&emsp;[[7]]",
+            "&emsp;&emsp;&emsp;[[8]]",
+            " &emsp;&emsp;[[9]]",
             "&lt;/body&gt;"
         ],
         "problemButtons": ["<li>", "</li>", "<ol>", "</ol>", "<ul>", "</ul>"],
@@ -157,13 +157,13 @@
         "defaultCode": [
             "&lt;body&gt;",
             "    &lt;h2&gt;회의 안건&lt;/h2&gt;",
-            "        [[0]]",
-            "            [[1]]1. 마을 재건[[2]]",
-            "            &lt;ul&gt;",
-            "                &lt;li&gt;집 세우기&lt;/li&gt;",
-            "                &lt;li&gt;길 만들기&lt;/li&gt;",
-            "            &lt;/ul&gt;",
-            "        [[3]]",
+            "&emsp;&emsp;[[0]]",
+            "&emsp;&emsp;&emsp;[[1]]1. 마을 재건[[2]]",
+            "&emsp;&emsp;&emsp;&lt;ul&gt;",
+            "&emsp;&emsp;&emsp;&emsp;&lt;li&gt;집 세우기&lt;/li&gt;",
+            "&emsp;&emsp;&emsp;&emsp;&lt;li&gt;길 만들기&lt;/li&gt;",
+            "&emsp;&emsp;&emsp;&lt;/ul&gt;",
+            "&emsp;&emsp;[[3]]",
             "&lt;/body&gt;"
         ],
         "problemButtons": ["<summary>", "</summary>", "<details>", "</details>"],
@@ -171,38 +171,94 @@
     },
     {
         "id": 8,
-        "title": "8을 만들어보라뭉!",
-        "problemText": "윽 세부사항이 왤케 많냐!<br>안건을 클릭하면 펼쳐지도록 만들어보자자!",
+        "title": "시장을 만들어보라뭉!",
+        "problemText": "시장에 물건을 진열할 거야!<br>물건들을 표로 정리해보자!",
         "defaultCode": [
-            "&lt;body&gt;",
-            "&lt;/body&gt;"
+            "&lt;table class=&quot;text-table&quot;&gt;",
+            "&emsp;&lt;thead&gt;",
+            "&emsp;&emsp;[[0]]",
+            "&emsp;&emsp;&emsp;&nbsp;&lt;th&gt;[[1]]&lt;/th&gt;",
+            "&emsp;&emsp;&emsp;&nbsp;&lt;th&gt;과일가게🍍&lt;/th&gt;",
+            "&emsp;&emsp;&emsp;&nbsp;&lt;th&gt;[[2]]&lt;/th&gt;",
+            "&emsp;&emsp;[[3]]",
+            "&emsp;&lt;/thead&gt;",
+            "&emsp;&lt;tbody&gt;",
+            "&emsp;&emsp;[[4]]",
+            "&emsp;&emsp;&emsp;[[5]]갈색 생선&lt;/td&gt;",
+            "&emsp;&emsp;&emsp;&emsp;...",
+            "&emsp;&emsp;[[6]]",
+            "&emsp;&emsp;[[7]]",
+            "&emsp;&emsp;&emsp;&nbsp;&lt;td&gt;갈색 생선&lt;/td&gt;",
+            "&emsp;&emsp;&emsp;&emsp;...",
+            "&emsp;&emsp;[[8]]",
+            "&emsp;&lt;/tbody&gt;",
+            "&lt;/table&gt;"
         ],
-        "problemButtons": [],
-        "answers": []
+        "problemButtons": ["<tr>", "꽃가게💐", "</tr>", "<td>", "생선가게🐟"],
+        "answers": ["<tr>", "생선가게🐟", "꽃가게💐", "</tr>", "<tr>", "<td>", "</tr>", "<tr>", "</tr>"]
     },
     {
         "id": 9,
-        "title": "9을 만들어보라뭉!",
-        "problemText": "윽 세부사항이 왤케 많냐!<br>안건을 클릭하면 펼쳐지도록 만들어보자자!",
+        "title": "마을 축제를 알려라뭉!",
+        "problemText": "곧 마을 축제 시즌이야!<br>일정 팝업 공지를 모달로 띄워보자!",
         "defaultCode": [
-            "&lt;body&gt;",
-            "&lt;body&gt;",
-            "&lt;/body&gt;"
+            "&lt;[[0]] id=&quot;popup&quot;&gt;",
+            "    &lt;h2&gt;< 축제 일정 안내! >&lt;/h2&gt;",
+            "    &lt;p&gt;날짜: 5월 1일 ~ 5월 15일&lt;/p&gt;",
+            "    &lt;p&gt;장소: 마을 광장&lt;/p&gt;",
+            "    &lt;p&gt;공연, 먹거리, 체험부스까지!&lt;/p&gt;",
+            "    &lt;[[1]] class=&quot;btn&quot; id=&quot;close&quot;&gt;닫기&lt;[[2]]&gt;",
+            "&lt;[[3]]&gt;"
         ],
-        "problemButtons": [],
-        "answers": []
+        "cssCode": [
+            "dialog {",
+            "  border: none;",
+            "  border-radius: 10px;",
+            "  padding: 20px;",
+            "  text-align: center;",
+            "}",
+            " ",
+            ".btn {",
+            "  padding: 10px 20px;",
+            "  font-size: 16px;",
+            "  background-color: darkorange;",
+            "  color: white;",
+            "  border: none;",
+            "  border-radius: 8px;",
+            "  cursor: pointer;",
+            "}"
+        ],
+        "jsCode": [
+            "const popup = document.getElementById('popup');",
+            "const openBtn = document.getElementById('open');",
+            "const closeBtn = document.getElementById('close');",
+            " ",
+            "openBtn.addEventListener('click', () => {",
+            "  popup.showModal(); // 모달 열기",
+            "});",
+            " ",
+            "closeBtn.addEventListener('click', () => {",
+            "  popup.close(); // 모달 열기",
+            "});"
+        ],
+        "problemButtons": ["/button", "button", "dialog", "/dialog"],
+        "answers": ["dialog", "button", "/button", "/dialog"]
     },
     {
         "id": 10,
-        "title": "10을 만들어보라뭉!",
-        "problemText": "윽 세부사항이 왤케 많냐!<br>안건을 클릭하면 펼쳐지도록 만들어보자자!",
+        "title": "마을지도를 만들어보라뭉!",
+        "problemText": "지도의 도형들을 클릭하면<br>각각의 장소로 이동할 수 있게 해줘>_<",
         "defaultCode": [
-            "&lt;body&gt;",
-            "&lt;body&gt;",
-            "&lt;body&gt;",
-            "&lt;/body&gt;"
+            "&lt;img src=&quot;map.png&quot; usemap=&quot;#villageMap&quot; width=&quot;643&quot; height=&quot;816&quot; alt=&quot;Village Map&quot;&gt;",
+            " ",
+            "&lt;map name=&quot;villageMap&quot;&gt;",
+            "&emsp;&lt;area shape=&quot;rect&quot; coords=&quot;150.250, 250, 350&quot; href=&quot;house.html&quot; alt=&quot;House&quot;&gt;",
+            "&emsp;&lt;area shape=&quot;[[0]]&quot; coords=&quot;[[1]]&quot; href=&quot;house.html&quot; alt=&quot;House&quot;&gt;",
+            "&emsp;&lt;area shape=&quot;[[2]]&quot; coords=&quot;[[3]]&quot; href=&quot;forest.html&quot; alt=&quot;Forest&quot;&gt;",
+            "&emsp;&lt;area shape=&quot;[[4]]&quot; coords=&quot;[[5]]&quot; href=&quot;lake.html&quot; alt=&quot;Lake&quot;&gt;",
+            "&lt;/map&gt;"
         ],
-        "problemButtons": [],
-        "answers": []
+        "problemButtons": ["rect", "poly", "circle", "325, 375, 50", "300, 500, 400, 500, 350, 600", "450, 300, 550, 400"],
+        "answers": ["rect", "450, 300, 550, 400", "circle", "325, 375, 50", "poly", "300, 500, 400, 500, 350, 600"]
     }
 ]
