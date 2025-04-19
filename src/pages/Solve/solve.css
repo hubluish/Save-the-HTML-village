@@ -179,7 +179,7 @@ body.shake {
     height: 220px;
     border-radius: 40px;
     background: var(--lightyellow-color);
-    gap: 27px;
+    gap: 20px;
     flex-direction: column;
     text-align: center;
     justify-content: center;
@@ -198,10 +198,13 @@ body.shake {
 
 .problem-button-container {
     display: flex;
-    height: 34px;
+    flex-wrap: wrap;
+    height: auto;
     justify-content: center;
     align-items: flex-start;
-    gap: 42px;
+    gap: 17px;
+    padding: 0 10px;
+    max-height: 130px;
 }
 
 .problem-button {

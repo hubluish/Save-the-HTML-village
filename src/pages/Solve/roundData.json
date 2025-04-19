@@ -252,10 +252,10 @@
             "&lt;img src=&quot;map.png&quot; usemap=&quot;#villageMap&quot; width=&quot;643&quot; height=&quot;816&quot; alt=&quot;Village Map&quot;&gt;",
             "&emsp;",
             "&lt;map name=&quot;villageMap&quot;&gt;",
-            "&emsp;&lt;area shape=&quot;rect&quot; coords=&quot;150.250, 250, 350&quot; href=&quot;house.html&quot; alt=&quot;House&quot;&gt;",
+            "&emsp;&lt;area shape=&quot;rect&quot; coords=&quot;150, 250, 250, 350&quot; href=&quot;house.html&quot; alt=&quot;House&quot;&gt;",
             "&emsp;&lt;area shape=&quot;[[0]]&quot; coords=&quot;[[1]]&quot; href=&quot;house.html&quot; alt=&quot;House&quot;&gt;",
-            "&emsp;&lt;area shape=&quot;[[2]]&quot; coords=&quot;[[3]]&quot; href=&quot;forest.html&quot; alt=&quot;Forest&quot;&gt;",
-            "&emsp;&lt;area shape=&quot;[[4]]&quot; coords=&quot;[[5]]&quot; href=&quot;lake.html&quot; alt=&quot;Lake&quot;&gt;",
+            "&emsp;&lt;area shape=&quot;[[2]]&quot; coords=&quot;[[3]]&quot; href=&quot;conferenceRoom.html&quot; alt=&quot;ConferenceRoom&quot;&gt;",
+            "&emsp;&lt;area shape=&quot;[[4]]&quot; coords=&quot;[[5]]&quot; href=&quot;tree.html&quot; alt=&quot;Tree&quot;&gt;",
             "&lt;/map&gt;"
         ],
         "problemButtons": ["rect", "poly", "circle", "325, 375, 50", "300, 500, 400, 500, 350, 600", "450, 300, 550, 400"],

@@ -493,10 +493,14 @@ document.addEventListener("DOMContentLoaded", function () {
           });
       }, 800); // 애니메이션 여유시간
     
-        // 7. 다음 스테이지로 이동
+        // 7. 다음 스테이지로 이동 또는 엔딩 페이지로 이동
         setTimeout(() => {
-          changeStage(1);
-        }, 2000); // 애니메이션 여유시간 
+          if (currentStage === maxStage) {
+            window.location.href = "../EndStory/endStory.html"; // ✅ 엔딩 페이지로 이동
+          } else {
+            changeStage(1); // 다음 문제로 이동
+          }
+        }, 2000); // 애니메이션 여유시간
     });
   }  
 
