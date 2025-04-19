@@ -459,6 +459,13 @@ body.shake {
     margin-top: 20px;
 }
 
+#stage-result-container {
+    position: absolute;
+    top: 120px;
+    right: 30px;
+    z-index: 1000;
+}  
+
 @keyframes shake {
     0% { transform: translateX(0); }
     25% { transform: translateX(-7px); }

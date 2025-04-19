@@ -102,6 +102,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 스테이지 데이터 로드
   function loadStageData(stageId) {
+    // 이전 모달 제거
+    const modalContainer = document.getElementById("stage-result-container");
+    if (modalContainer) modalContainer.innerHTML = "";
+
       fetch("roundData.json")
         .then(res => res.json())
         .then(data => {
@@ -141,6 +145,28 @@ document.addEventListener("DOMContentLoaded", function () {
           });
 
           rebindEvents();
+
+          // 문제 시작하자마자 모달 띄우기
+          const container = document.getElementById("stage-result-container");
+          // 문제 시작 시 (기존 위치에서)
+          fetch(`modal/${stageId}.html`)
+          .then(res => res.text())
+          .then(html => {
+            container.innerHTML = html;
+
+            // ✅ intro만 보여주기
+            const introImg = container.querySelector(".stage-intro-img");
+            if (introImg) introImg.classList.add("show");
+
+            const style = document.createElement("link");
+            style.rel = "stylesheet";
+            style.href = `modal/${stageId}.css`;
+            document.head.appendChild(style);
+
+            const script = document.createElement("script");
+            script.src = `modal/${stageId}.js`;
+            document.body.appendChild(script);
+          });
       });
   }
 
@@ -431,16 +457,39 @@ document.addEventListener("DOMContentLoaded", function () {
   
       markStageAsCleared(currentStage);
   
+      // 정답 모달 띄우기
       setTimeout(() => {
-        // 모든 문제를 클리어했는지 검사
-        const clearedStages = JSON.parse(localStorage.getItem("clearedStages")) || [];
-        if (clearedStages.length === maxStage) {
-          window.location.href = "../EndStory/endStory.html";
-          return;
-        }
-      
-        changeStage(1);
-      }, 800);      
+        const container = document.getElementById("stage-result-container");
+
+        fetch(`modal/${currentStage}.html`)
+          .then(res => res.text())
+          .then(html => {
+            container.innerHTML = html;
+
+            // ✅ 정답 시 intro 숨기고 result 보이기
+            const introImg = container.querySelector(".stage-intro-img");
+            const resultImg = container.querySelector(".stage-result-img");
+
+            if (introImg) introImg.remove(); // 또는 classList.remove("show");
+            if (resultImg) resultImg.classList.add("show");
+
+            // 스타일도 동적으로 로드
+            const style = document.createElement("link");
+            style.rel = "stylesheet";
+            style.href = `modal/${currentStage}.css`;
+            document.head.appendChild(style);
+
+            // JS도 동적으로 로드
+            const script = document.createElement("script");
+            script.src = `modal/${currentStage}.js`;
+            document.body.appendChild(script);
+          });
+      }, 800); // 애니메이션 여유시간
+    
+        // 7. 다음 스테이지로 이동
+        setTimeout(() => {
+          changeStage(1);
+        }, 2000); // 애니메이션 여유시간 
     });
   }  
 

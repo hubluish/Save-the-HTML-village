@@ -5,20 +5,18 @@
         "problemText": "&lt;h1&gt;태그를 사용하여<br>마을 이름을 복구하라!",
         "defaultCode": [
           "&lt;body&gt;",
-          "&nbsp;&nbsp;[[0]] 하하호호 HTML 마을 🏡 [[1]]",
+          "    [[0]] 반짝반짝 뭉뭉 더 힐 🏡 [[1]]",
           "&lt;/body&gt;"
         ],
         "cssCode": [
             "body {",
-            "  font-family: 'Dunggeunmiso';",
-            "  color: #F2AF00;",
+            "  font-family: DOSSaemmul;",
+            "  color: #000;",
             "}"
         ],
         "jsCode": [
             "const villageName = document.querySelector('h1');",
             "villageName.style.fontSize = '50px';",
-            "villageName.style.textAlign = 'center';",
-            "villageName.style.marginTop = '100px';",
             "villageName.style.fontWeight = 'bold';"
         ],
         "problemButtons": ["<h1>", "</h1>"],
@@ -34,7 +32,7 @@
         ],
         "defaultCode": [
             "&lt;body&gt;",
-            "&nbsp;&nbsp;&lt;[[0]] src=&quot;house.png&quot; alt=&quot;집1&quot; class=&quot;house&quot;&gt;",
+            "    &lt;[[0]] src=&quot;house.png&quot; alt=&quot;집1&quot; class=&quot;house&quot;&gt;",
             "&lt;/body&gt;"
         ],
         "cssCode": [
@@ -52,7 +50,7 @@
         "problemText": "&lt;a&gt; 태그와 road id를 사용해서 길을 만들어봐!",
         "defaultCode": [
             "&lt;body&gt;",
-            "&nbsp;&nbsp;[[0]] href=&quot;forest.html&quot; id=&quot;road&quot;&gt;길 따라가기 →[[1]]",
+            "    [[0]] href=&quot;forest.html&quot; id=&quot;road&quot;&gt;길 따라가기 →[[1]]",
             "&lt;/body&gt;"
           ],
         "cssCode": [
@@ -75,11 +73,11 @@
         "problemText": "나무가 이상하다!<br>나무를 정렬해보자!",
         "defaultCode": [
             "&lt;body&gt;",
-            "&nbsp;&nbsp;&lt;div class=&quot;forest&quot;&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;tree.png&quot; alt=&quot;나무1&quot; class=&quot;tree&quot;&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;tree.png&quot; alt=&quot;나무2&quot; class=&quot;tree&quot;&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;tree.png&quot; alt=&quot;나무3&quot; class=&quot;tree&quot;&gt;",
-            "&nbsp;&nbsp;&lt;/div&gt;",
+            "    &lt;div class=&quot;forest&quot;&gt;",
+            "        &lt;img src=&quot;tree.png&quot; alt=&quot;나무1&quot; class=&quot;tree&quot;&gt;",
+            "        &lt;img src=&quot;tree.png&quot; alt=&quot;나무2&quot; class=&quot;tree&quot;&gt;",
+            "        &lt;img src=&quot;tree.png&quot; alt=&quot;나무3&quot; class=&quot;tree&quot;&gt;",
+            "    &lt;/div&gt;",
             "&lt;/body&gt;"
         ],
         "cssCode": [
@@ -117,16 +115,16 @@
         "problemText": "새들은 노래부르는 걸 좋아해!<br>새를 클릭하면 새소리가 들리게 해보자!",
         "defaultCode": [
             "&lt;body&gt;",
-            "&nbsp;&nbsp;&lt;[[0]] id=&quot;audio&quot;&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&lt;[[1]] src=&quot;village.mp3&quot; type=&quot;audio/mpeg&quot;&gt;",
-            "&nbsp;&nbsp;&lt;/[[2]]&gt;",
+            "    &lt;[[0]] id=&quot;audio&quot;&gt;",
+            "        &lt;[[1]] src=&quot;village.mp3&quot; type=&quot;audio/mpeg&quot;&gt;",
+            "    &lt;/[[2]]&gt;",
             "&lt;/body&gt;"
         ],
         "jsCode": [
             "function playAudio() {",
-            "&nbsp;&nbsp;const [[3]] = document.getElementById('audio');",
-            "&nbsp;&nbsp;[[4]].currentTime = 0;",
-            "&nbsp;&nbsp;[[5]].play();",
+            "    const [[3]] = document.getElementById('audio');",
+            "    [[4]].currentTime = 0;",
+            "    [[5]].play();",
             "}"
         ],
         "problemButtons": ["video", "audio", "sound", "source"],
@@ -138,15 +136,15 @@
         "problemText": "회의 안건이 너무 더러워!<br>리스트를 이용하여 정리해보자!",
         "defaultCode": [
             "&lt;body&gt;",
-            "&nbsp;&nbsp;&lt;h2&gt;회의 안건&lt;/h2&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;[[0]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[1]]마을 재건",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[2]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[3]]집 세우기[[4]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[5]]길 만들기[[6]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[7]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[8]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;[[9]]",
+            "    &lt;h2&gt;회의 안건&lt;/h2&gt;",
+            "        [[0]]",
+            "            [[1]]마을 재건",
+            "                [[2]]",
+            "                    [[3]]집 세우기[[4]]",
+            "                    [[5]]길 만들기[[6]]",
+            "                [[7]]",
+            "            [[8]]",
+            "        [[9]]",
             "&lt;/body&gt;"
         ],
         "problemButtons": ["<li>", "</li>", "<ol>", "</ol>", "<ul>", "</ul>"],
@@ -158,14 +156,14 @@
         "problemText": "윽 세부사항이 왤케 많냐!<br>안건을 클릭하면 펼쳐지도록 만들어보자자!",
         "defaultCode": [
             "&lt;body&gt;",
-            "&nbsp;&nbsp;&lt;h2&gt;회의 안건&lt;/h2&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;[[0]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[1]]1. 마을 재건[[2]]",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;집 세우기&lt;/li&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;길 만들기&lt;/li&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;",
-            "&nbsp;&nbsp;&nbsp;&nbsp;[[3]]",
+            "    &lt;h2&gt;회의 안건&lt;/h2&gt;",
+            "        [[0]]",
+            "            [[1]]1. 마을 재건[[2]]",
+            "            &lt;ul&gt;",
+            "                &lt;li&gt;집 세우기&lt;/li&gt;",
+            "                &lt;li&gt;길 만들기&lt;/li&gt;",
+            "            &lt;/ul&gt;",
+            "        [[3]]",
             "&lt;/body&gt;"
         ],
         "problemButtons": ["<summary>", "</summary>", "<details>", "</details>"],

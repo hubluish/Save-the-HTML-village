@@ -1,0 +1,21 @@
+.stage-modal {
+  position: absolute;
+  top: 20px;
+  right: 65px;
+  width: 600px;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.stage-modal-img {
+  width: 600px;
+  display: none; /* 기본적으로 안 보이게 */
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.stage-intro-img.show,
+.stage-result-img.show {
+  display: block;
+  opacity: 1;
+}
