@@ -149,22 +149,22 @@ document.addEventListener("DOMContentLoaded", function () {
           // 문제 시작하자마자 모달 띄우기
           const container = document.getElementById("stage-result-container");
           // 문제 시작 시 (기존 위치에서)
-          fetch(`modal/${stageId}.html`)
+          fetch(`modal/${stageId}/${stageId}.html`)
           .then(res => res.text())
           .then(html => {
             container.innerHTML = html;
 
-            // ✅ intro만 보여주기
+            // intro만 보여주기
             const introImg = container.querySelector(".stage-intro-img");
             if (introImg) introImg.classList.add("show");
 
             const style = document.createElement("link");
             style.rel = "stylesheet";
-            style.href = `modal/${stageId}.css`;
+            style.href = `modal/${stageId}/${stageId}.css`;
             document.head.appendChild(style);
 
             const script = document.createElement("script");
-            script.src = `modal/${stageId}.js`;
+            script.src = `modal/${stageId}/${stageId}.js`;
             document.body.appendChild(script);
           });
       });
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         const container = document.getElementById("stage-result-container");
 
-        fetch(`modal/${currentStage}.html`)
+        fetch(`modal/${currentStage}/${currentStage}.html`)
           .then(res => res.text())
           .then(html => {
             container.innerHTML = html;
@@ -476,12 +476,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // 스타일도 동적으로 로드
             const style = document.createElement("link");
             style.rel = "stylesheet";
-            style.href = `modal/${currentStage}.css`;
+            style.href = `modal/${currentStage}/${currentStage}.css`;
             document.head.appendChild(style);
 
             // JS도 동적으로 로드
             const script = document.createElement("script");
-            script.src = `modal/${currentStage}.js`;
+            script.src = `modal/${currentStage}/${currentStage}.js`;
             document.body.appendChild(script);
           });
       }, 800); // 애니메이션 여유시간
