@@ -145,9 +145,9 @@ document.addEventListener("DOMContentLoaded", function () {
           });
 
           rebindEvents();
-
           // 문제 시작하자마자 모달 띄우기
           const container = document.getElementById("stage-result-container");
+          
           // 문제 시작 시 (기존 위치에서)
           fetch(`modal/${stageId}/${stageId}.html`)
           .then(res => res.text())
