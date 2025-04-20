@@ -43,7 +43,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  display: block;
+  z-index: 1;
 }
 
 /* full-image가 부모 요소 크기에 맞게 늘어나도록 수정 */

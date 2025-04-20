@@ -16,8 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const stageMapOverlay = document.querySelector(".stage-map-overlay");
   const closeStageMapBtn = document.querySelector(".close-stage-map");
   
+  const urlParams = new URLSearchParams(window.location.search);
+  const stageFromUrl = parseInt(urlParams.get("stage"), 10);
+  let currentStage = isNaN(stageFromUrl) ? 0 : stageFromUrl;
+
   let currentTab = "html";
-  let currentStage = 0;
   let currentRoundData = null;
   const maxStage = 10;
 
