@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             changeStage(1); // 다음 문제로 이동
           }
-        }, 2000); // 애니메이션 여유시간
+        }, 5000); // 애니메이션 여유시간 - 임의로 보려고 설정해둠요
     });
   }  
 

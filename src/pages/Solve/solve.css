@@ -1,13 +1,13 @@
 .main-container{
     display: flex;
     justify-content: center;
+    padding: 50px 107px 50px 108px;
 }
 
 /* 스크롤바 고려해서 넘침 방지 */
 body {
     margin: 0;
     overflow: hidden;
-    padding: 50px 107px 50px 108px;
     background: var(--deepyellow-color);
 }
 

@@ -1,33 +1,30 @@
 .stage-modal {
-    position: absolute;
-    top: 20px;
-    right: 65px;
-    width: 600px;
-    height: 822px;
-    border-radius: 12px;
-    padding: 12px;
+  position: absolute;
+  top: 20px;
+  right: 65px;
+  width: 600px;
+  height: 822px;
+  border-radius: 12px;
+  padding: 12px;
 }
   
 .stage-modal-img {
-    width: 600px;
-    display: none; /* 기본적으로 안 보이게 */
-    transition: opacity 0.4s ease;
-    opacity: 0;
+  width: 600px;
+  display: none; /* 기본적으로 안 보이게 */
+  transition: opacity 0.4s ease;
+  opacity: 0;
 }
   
 .stage-intro-img.show,
 .stage-result-img.show {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 }
 
-
-  
-  .stage-result-img {
-    z-index: 2;
-    /* position: absolute; */
-  }
-
+.stage-result-img {
+  z-index: 2;
+  /* position: absolute; */
+}
 
 /* stage-intro-img와 그 안의 .screen이 제대로 크기를 가지도록 수정 */
 .stage-intro-img {
@@ -38,6 +35,10 @@
   opacity: 1;
 }
 
+.result-left {
+  margin-left: -381px;
+}
+
 /* 각 화면 (screen) div가 기본적으로 화면을 채울 수 있도록 수정 */
 .screen {
   position: absolute;
@@ -45,19 +46,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  display: block;
+  z-index: 1;
 }
 
 /* full-image가 부모 요소 크기에 맞게 늘어나도록 수정 */
 .full-image {
-  width: 100%;
+  width: 600px;
+  margin-left: 12px;
+  margin-top: 12px;
   object-fit: cover;  /* 이미지가 화면에 맞게 채워지도록 조정 */
   transition: opacity 0.4s ease;
 }
 
 /* .hidden 클래스가 적용되면 요소가 사라지게끔 수정 */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 #screen1 {
@@ -73,132 +76,129 @@
 }
 
 @font-face {
-    font-family: 'DOSSaemmul';
-    src: url('assets/fonts/DOSSaemmul.woff') format('woff');
-  }
+  font-family: 'DOSSaemmul';
+  src: url('assets/fonts/DOSSaemmul.woff') format('woff');
+}
   
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'DOSSaemmul';
-  }
-  
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'DOSSaemmul';
+}
 
-  
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  color: #000;
+  text-align: center;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: #000;
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: -1.52px;
+  width: 100%;
+}
 
-  .center-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -120%);
-    color: #000;
-    text-align: center;
-    -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: #000;
-    font-size: 38px;
-    font-weight: 500;
-    letter-spacing: -1.52px;
-    width: 100%;
-  }
-  
-  .check-button {
-    z-index: 20;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
-    background: #FFFAD2;
-    color: #8EC200;
-    text-align: center;
-    -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: #8EC200;
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: -1.6px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .check-button:hover {
-    background: #8EC200;
-    color: #FFFAD2;
-  }
-  
-  .result-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -120%);
-    color: #000;
-    text-align: center;
-    -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: #000;
-    font-size: 38px;
-    font-weight: 500;
-    letter-spacing: -2.66px;
-    width: 100%;
-  }
-  
-  .next-stage-button {
-    z-index: 3;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-flex;
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
-    background: #FFFAD2;
-    justify-content: center;
-    align-items: center;
-    gap: 11px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .next-stage-button .check-icon {
-    width: 41px;
-    height: 41px;
-  }
-  
-  .next-stage-button .check-text {
-    color: #8EC200;
-    text-align: center;
-    -webkit-text-stroke-width: 0.4px;
-    -webkit-text-stroke-color: #FFFAD2;
-    font-size: 38px;
-    font-weight: 500;
-    letter-spacing: -2.66px;
-  }
-  
-  .next-stage-button:hover {
-    background: #8EC200;
-  }
-  
-  .next-stage-button:hover .check-icon {
-    content: url('../../../../assets/icons/9-check-hover.png');
-  }
-  
-  .next-stage-button:hover .check-text {
-    color: #FFFAD2;
-  }
-  
+.check-button {
+  z-index: 20;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background: #FFFAD2;
+  color: #8EC200;
+  text-align: center;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: #8EC200;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -1.6px;
+  border: none;
+  cursor: pointer;
+}
 
-  .modal-set{
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 329px;
-    height: 120px;
-    flex-shrink: 0;
-    flex-direction: column;
-    align-items: center;
-    gap: 39px;
-    transform: translate(-50%, -50%);
+.check-button:hover {
+  background: #8EC200;
+  color: #FFFAD2;
+}
 
-  }
+.result-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  color: #000;
+  text-align: center;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: #000;
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: -2.66px;
+  width: 100%;
+}
+
+.next-stage-button {
+  z-index: 3;
+  position: absolute;
+  top: 551px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background: #FFFAD2;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  border: none;
+  cursor: pointer;
+}
+
+.next-stage-button .check-icon {
+  width: 41px;
+  height: 41px;
+}
+
+.next-stage-button .check-text {
+  color: #8EC200;
+  text-align: center;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: #FFFAD2;
+  font-family: DOSSaemmul;
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: -2.66px;
+}
+
+.next-stage-button:hover {
+  background: #8EC200;
+}
+
+.next-stage-button:hover .check-icon {
+  content: url('../../../../assets/icons/9-check-hover.png');
+}
+
+.next-stage-button:hover .check-text {
+  color: #FFFAD2;
+}
+
+
+.modal-set{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 329px;
+  height: 120px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 39px;
+  transform: translate(-50%, -50%);
+}
