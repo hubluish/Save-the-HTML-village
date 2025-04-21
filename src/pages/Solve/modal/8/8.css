@@ -1,21 +1,74 @@
 .stage-modal {
-    position: absolute;
-    top: 20px;
-    right: 65px;
-    width: 600px;
-    border-radius: 12px;
-    padding: 12px;
+  position: absolute;
+  top: 20px;
+  right: 65px;
+  width: 600px;
+  height: 822px;
+  border-radius: 12px;
+  padding: 12px;
 }
   
 .stage-modal-img {
-    width: 600px;
-    display: none; /* 기본적으로 안 보이게 */
-    transition: opacity 0.4s ease;
-    opacity: 0;
+  width: 600px;
+  display: none; /* 기본적으로 안 보이게 */
+  transition: opacity 0.4s ease;
+  opacity: 0;
 }
   
 .stage-intro-img.show,
 .stage-result-img.show {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
+}
+  
+.stage-result-img {
+  z-index: 2;
+  position: absolute;
+}
+
+
+/* stage-intro-img와 그 안의 .screen이 제대로 크기를 가지도록 수정 */
+.stage-intro-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+}
+
+/* 각 화면 (screen) div가 기본적으로 화면을 채울 수 있도록 수정 */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* full-image가 부모 요소 크기에 맞게 늘어나도록 수정 */
+.full-image {
+  width: 600px;
+  margin-left: 2px;
+  object-fit: cover;  /* 이미지가 화면에 맞게 채워지도록 조정 */
+  transition: opacity 0.4s ease;
+}
+
+/* .hidden 클래스가 적용되면 요소가 사라지게끔 수정 */
+.hidden {
+  display: none;
+}
+
+#screen1 {
+  z-index: 30;  /* 첫 번째 화면 */
+}
+
+#screen2 {
+  z-index: 20;  /* 두 번째 화면 */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'DOSSaemmul';
 }

@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save-the-HTML-village</title>
+    <title>표만들기</title>
     <link rel="icon" href="../../../../assets/icons/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../../styles/variables.css">
     <link rel="stylesheet" href="./8.css">
+    <script src="./8.js"></script>
 </head>
 <body>
-    <div class="stage-modal">
-        <img src="../../assets/icons/8-bg.png" class="stage-modal-img stage-intro-img">
-        <img src="../../assets/icons/8-result-bg.png" class="stage-modal-img stage-result-img">
-    </div>
+    <div class="stage-modal" >
+        <div class="stage-intro-img stage-modal-img show">
+            <!-- 첫 번째 화면 -->
+            <div class="screen" id="screen1">
+                <img src="../../assets/icons/8-1.png" alt="1st" class="full-image">
+            </div>
+            
+            <!-- 두 번째 화면 -->
+            <div class="screen hidden" id="screen2">
+                <img src="../../assets/icons/8-bg.png" alt="2nd" class="full-image">
+            </div>
+        </div>
 
-    <script src="./8.js"></script>
+        <div class="stage-result-img stage-modal-img">
+            <img src="../../assets/icons/8-result-bg.png" class="full-image">
+        </div>
+    </div>
 </body>
 </html>

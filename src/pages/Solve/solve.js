@@ -16,8 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const stageMapOverlay = document.querySelector(".stage-map-overlay");
   const closeStageMapBtn = document.querySelector(".close-stage-map");
   
+  const urlParams = new URLSearchParams(window.location.search);
+  const stageFromUrl = parseInt(urlParams.get("stage"), 10);
+  let currentStage = isNaN(stageFromUrl) ? 0 : stageFromUrl;
+  // let currentStage = 8;
+
   let currentTab = "html";
-  let currentStage = 0;
   let currentRoundData = null;
   const maxStage = 10;
 
@@ -98,6 +102,10 @@ document.addEventListener("DOMContentLoaded", function () {
   
     renderCode(codeToRender);
     restoreTabAnswers();
+
+    requestAnimationFrame(() => {
+      rebindEvents();
+    });
   }  
 
   // 스테이지 데이터 로드
@@ -145,14 +153,19 @@ document.addEventListener("DOMContentLoaded", function () {
           });
 
           rebindEvents();
-
           // 문제 시작하자마자 모달 띄우기
           const container = document.getElementById("stage-result-container");
+          
           // 문제 시작 시 (기존 위치에서)
           fetch(`modal/${stageId}/${stageId}.html`)
           .then(res => res.text())
           .then(html => {
-            container.innerHTML = html;
+            // DOMParser로 HTML 전체를 파싱!
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+        
+            // body 태그 안쪽만 추출!
+            container.innerHTML = doc.body.innerHTML;
 
             // intro만 보여주기
             const introImg = container.querySelector(".stage-intro-img");
@@ -338,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // 탭 클릭(직접 바인딩)
-  document.getElementById("html-tab").addEventListener("click", () => switchTab("html"));
+  // document.getElementById("html-tab").addEventListener("click", () => switchTab("html"));
   document.getElementById("css-tab").addEventListener("click", () => switchTab("css"));
 
   // 드롭 이벤트 바인딩
@@ -370,8 +383,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // 탭, 클리어 버튼 등 재바인딩 (이벤트 중복 대비)
   function rebindEvents() {
     const htmlTab = document.getElementById("html-tab");
+    if (htmlTab) {
+      htmlTab.addEventListener("click", () => switchTab("html"));
+    }
     const cssTab = document.getElementById("css-tab");
     const clearButton = document.querySelector(".code-clear-button");
+    if (!htmlTab || !cssTab || !clearButton) {
+      console.warn("❗탭 또는 클리어 버튼이 아직 DOM에 없음, rebindEvents 스킵");
+      return;
+    }
   
     const newHtmlTab = htmlTab.cloneNode(true);
     const newCssTab = cssTab.cloneNode(true);
@@ -500,7 +520,7 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             changeStage(1); // 다음 문제로 이동
           }
-        }, 2000); // 애니메이션 여유시간
+        }, 5000); // 애니메이션 여유시간 - 임의로 보려고 설정해둠요
     });
   }  
 
