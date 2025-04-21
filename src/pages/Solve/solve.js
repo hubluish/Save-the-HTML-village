@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
   const urlParams = new URLSearchParams(window.location.search);
   const stageFromUrl = parseInt(urlParams.get("stage"), 10);
-  let currentStage = isNaN(stageFromUrl) ? 0 : stageFromUrl;
+  // let currentStage = isNaN(stageFromUrl) ? 0 : stageFromUrl;
+  let currentStage = 8;
 
   let currentTab = "html";
   let currentRoundData = null;
@@ -101,6 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
     renderCode(codeToRender);
     restoreTabAnswers();
+
+    rebindEvents(); 
   }  
 
   // 스테이지 데이터 로드
@@ -341,7 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // 탭 클릭(직접 바인딩)
-  document.getElementById("html-tab").addEventListener("click", () => switchTab("html"));
+  // document.getElementById("html-tab").addEventListener("click", () => switchTab("html"));
   document.getElementById("css-tab").addEventListener("click", () => switchTab("css"));
 
   // 드롭 이벤트 바인딩
@@ -373,8 +376,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // 탭, 클리어 버튼 등 재바인딩 (이벤트 중복 대비)
   function rebindEvents() {
     const htmlTab = document.getElementById("html-tab");
+    if (htmlTab) {
+      htmlTab.addEventListener("click", () => switchTab("html"));
+    }
     const cssTab = document.getElementById("css-tab");
     const clearButton = document.querySelector(".code-clear-button");
+    if (!htmlTab || !cssTab || !clearButton) {
+      console.warn("❗탭 또는 클리어 버튼이 아직 DOM에 없음, rebindEvents 스킵");
+      return;
+    }
   
     const newHtmlTab = htmlTab.cloneNode(true);
     const newCssTab = cssTab.cloneNode(true);

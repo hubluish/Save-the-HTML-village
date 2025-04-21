@@ -1,8 +1,7 @@
-if (!window.location.pathname.includes("8.html")) {
-    console.warn("❌ 8.js가 잘못 실행됨. 실행 중단.");
-    throw new Error("Wrong page for 8.js");
-}  
-
+if (!window.location.href.includes("solve")) {
+  console.warn("페이지가 solve가 아니지만 계속 진행합니다.");
+} else {
+  
 function initStage8Modal() {
     const screen1 = document.getElementById('screen1');
     const screen2 = document.getElementById('screen2');
@@ -24,3 +23,4 @@ function initStage8Modal() {
 }
   
 initStage8Modal();  
+}

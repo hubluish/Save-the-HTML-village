@@ -23,13 +23,13 @@
   
 .stage-result-img {
   z-index: 2;
-  /* position: absolute; */
+  position: absolute;
 }
 
 
 /* stage-intro-img와 그 안의 .screen이 제대로 크기를 가지도록 수정 */
 .stage-intro-img {
-  /* position: absolute; */
+  position: absolute;
   width: 100%;
   height: 100%;
   display: block;
