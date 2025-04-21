@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
   const urlParams = new URLSearchParams(window.location.search);
   const stageFromUrl = parseInt(urlParams.get("stage"), 10);
-  // let currentStage = isNaN(stageFromUrl) ? 0 : stageFromUrl;
-  let currentStage = 8;
+  let currentStage = isNaN(stageFromUrl) ? 0 : stageFromUrl;
+  // let currentStage = 8;
 
   let currentTab = "html";
   let currentRoundData = null;
@@ -103,7 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCode(codeToRender);
     restoreTabAnswers();
 
-    rebindEvents(); 
+    requestAnimationFrame(() => {
+      rebindEvents();
+    });
   }  
 
   // 스테이지 데이터 로드
@@ -158,7 +160,12 @@ document.addEventListener("DOMContentLoaded", function () {
           fetch(`modal/${stageId}/${stageId}.html`)
           .then(res => res.text())
           .then(html => {
-            container.innerHTML = html;
+            // DOMParser로 HTML 전체를 파싱!
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+        
+            // body 태그 안쪽만 추출!
+            container.innerHTML = doc.body.innerHTML;
 
             // intro만 보여주기
             const introImg = container.querySelector(".stage-intro-img");
