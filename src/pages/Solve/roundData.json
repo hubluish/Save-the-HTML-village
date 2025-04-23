@@ -41,7 +41,7 @@
             "  height: [[3]];",
             "}"
         ],
-        "problemButtons": [".house", "#house", "img", "300px", "340px"],
+        "problemButtons": [".house", "#house", "img", "300px", "340px", "290px", "330px"],
         "answers": ["img", ".house", "340px", "300px"]
     },
     {
@@ -99,6 +99,15 @@
         "id": 4,
         "title": "새를 날려 보내달라뭉!",
         "problemText": "헉! 저기에 새가 있잖아?<br>새를 나무로 보내보자!",
+        "defaultCode": [
+            "&lt;body&gt;",
+            "    &lt;div class=&quot;bird-container&quot;&gt;",
+            "        &lt;img src=&quot;bird.png&quot; alt=&quot;새1&quot; class=&quot;bird&quot;&gt;",
+            "        &lt;img src=&quot;bird.png&quot; alt=&quot;새2&quot; class=&quot;bird&quot;&gt;",
+            "        &lt;img src=&quot;bird.png&quot; alt=&quot;새새3&quot; class=&quot;bird&quot;&gt;",
+            "    &lt;/div&gt;",
+            "&lt;/body&gt;"
+        ],
         "cssCode": [
             ".bird-container {",
             "  display: flex;",
@@ -119,6 +128,11 @@
             "        &lt;[[1]] src=&quot;village.mp3&quot; type=&quot;audio/mpeg&quot;&gt;",
             "    &lt;/[[2]]&gt;",
             "&lt;/body&gt;"
+        ],
+        "cssCode": [
+            "#audio {",
+            "  display: none;",
+            "}"
         ],
         "jsCode": [
             "function playAudio() {",
@@ -159,10 +173,10 @@
             "    &lt;h2&gt;회의 안건&lt;/h2&gt;",
             "&emsp;&emsp;[[0]]",
             "&emsp;&emsp;&emsp;[[1]]1. 마을 재건[[2]]",
-            "&emsp;&emsp;&emsp;&lt;ul&gt;",
-            "&emsp;&emsp;&emsp;&emsp;&lt;li&gt;집 세우기&lt;/li&gt;",
-            "&emsp;&emsp;&emsp;&emsp;&lt;li&gt;길 만들기&lt;/li&gt;",
-            "&emsp;&emsp;&emsp;&lt;/ul&gt;",
+            "&emsp;&emsp;&emsp;&emsp;&emsp;&lt;ul&gt;",
+            "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;집 세우기&lt;/li&gt;",
+            "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;길 만들기&lt;/li&gt;",
+            "&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/ul&gt;",
             "&emsp;&emsp;[[3]]",
             "&lt;/body&gt;"
         ],
