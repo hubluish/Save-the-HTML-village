@@ -104,9 +104,11 @@ body {
   font-family: "Ownglyph PDH";
   font-size: 64px;
   font-style: normal;
+  margin-top: 30px;
   font-weight: 400;
   line-height: 150%; /* 96px */
   letter-spacing: -0.704px;
+  background: linear-gradient(to top, #e5f77d 50%, transparent 50%);;
 }
 
 .description{
@@ -117,6 +119,8 @@ body {
   font-weight: 400;
   line-height: 150%; /* 75px */
   letter-spacing: -1.1px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 
@@ -220,4 +224,18 @@ body {
   font-weight: 350;
   line-height: 150%; /* 48px */
   letter-spacing: -0.352px;
+}
+
+.blue{
+  color: var(--blue-color);
+}
+
+.red{
+  color: var(--red-color);
+}
+
+.rectangle{
+  border-radius: 40px;
+  border: 1px solid #000;
+  width: 1080px;
 }
