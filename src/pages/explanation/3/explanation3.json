@@ -1,0 +1,37 @@
+[
+  {
+    "type": "first",
+    "title": "1. display 속성이란?",
+    "description": "HTML 요소들이 어떻게 <span class='red'>배치될지</span> 결정하는 CSS 속성이야.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. 자주 쓰이는 display 값들",
+    "description": "block - 한 줄 전부 차지 (줄바꿈됨)\ninline - 내용만큼만 차지 (줄바꿈 안 됨)\ninline-block - 줄바꿈은 안 하지만, 크기 조절 가능\nnone - 화면에서 아예 사라짐\nflex - 자식 요소들을 유연하게 가로/세로 정렬\ngrid - 격자 형태 레이아웃"
+  },
+  {
+    "type": "first",
+    "title": "3. display: flex란?",
+    "description": "요소 안의 자식들을 <span class='red'>유연하게 정렬</span>할 수 있도록 해주는 속성이야\n부모 요소에 <span class='blue'>display: flex</span>를 주면, \n자식 요소들이 자동으로 가로로 나란히(row) 정렬돼!"
+  },
+  {
+    "type": "first",
+    "title": "4. flex-direction이란?",
+    "description": "display: flex일 때, 자식 요소들의 정렬 방향을 정해주는 속성!",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "5. flex-direction의 종류",
+    "description": "row - 가로 방향 정렬 (기본값) ➡️\nrow-reverse - 가로 반대 방향 정렬 ⬅️\ncolumn - 세로 방향 정렬 ⬇️\ncolumn-reverse - 세로 반대 방향 정렬 ⬆"
+  }
+]
