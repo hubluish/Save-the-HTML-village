@@ -159,28 +159,28 @@ document.addEventListener("DOMContentLoaded", function () {
           
           // 문제 시작 시 (기존 위치에서)
           fetch(`modal/${stageId}/${stageId}.html`)
-          .then(res => res.text())
-          .then(html => {
-            // DOMParser로 HTML 전체를 파싱!
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-        
-            // body 태그 안쪽만 추출!
-            container.innerHTML = doc.body.innerHTML;
+            .then(res => res.text())
+            .then(html => {
+              // DOMParser로 HTML 전체를 파싱!
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+          
+              // body 태그 안쪽만 추출!
+              container.innerHTML = doc.body.innerHTML;
 
-            // intro만 보여주기
-            const introImg = container.querySelector(".stage-intro-img");
-            if (introImg) introImg.classList.add("show");
+              // intro만 보여주기
+              const introImg = container.querySelector(".stage-intro-img");
+              if (introImg) introImg.classList.add("show");
 
-            const style = document.createElement("link");
-            style.rel = "stylesheet";
-            style.href = `modal/${stageId}/${stageId}.css`;
-            document.head.appendChild(style);
+              const style = document.createElement("link");
+              style.rel = "stylesheet";
+              style.href = `modal/${stageId}/${stageId}.css`;
+              document.head.appendChild(style);
 
-            const script = document.createElement("script");
-            script.src = `modal/${stageId}/${stageId}.js`;
-            document.body.appendChild(script);
-          });
+              const script = document.createElement("script");
+              script.src = `modal/${stageId}/${stageId}.js`;
+              document.body.appendChild(script);
+            });
       });
   }
 
@@ -504,15 +504,6 @@ document.addEventListener("DOMContentLoaded", function () {
             style.rel = "stylesheet";
             style.href = `modal/${currentStage}/${currentStage}.css`;
             document.head.appendChild(style);
-
-            // JS도 동적으로 로드
-            const script = document.createElement("script");
-            script.src = `modal/${stageId}/${stageId}.js`;
-            script.onload = () => {
-              // ✅ 여기서 이벤트 재바인딩
-              rebindEvents();  // 이 타이밍에 해야 modal JS도 준비된 상태!
-            };
-            document.body.appendChild(script);
           });
       }, 800); // 애니메이션 여유시간
     
@@ -523,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             window.location.href = `../explanation/${currentStage + 1}/explanation${currentStage + 1}.html`; // 설명 페이지로 이동
           }
-        }, 3000); // 애니메이션 여유시간 - 임의로 보려고 설정해둠요
+        }, 8000); // 애니메이션 여유시간 - 임의로 보려고 설정해둠요
     });
   }  
 

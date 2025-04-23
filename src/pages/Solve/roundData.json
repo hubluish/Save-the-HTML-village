@@ -41,8 +41,8 @@
             "  height: [[3]];",
             "}"
         ],
-        "problemButtons": [".house", "#house", "img", "300px", "340px", "290px", "330px"],
-        "answers": ["img", ".house", "340px", "300px"]
+        "problemButtons": [".house", "#house", "img", "302px", "340px", "312px", "330px"],
+        "answers": ["img", ".house", "340px", "302px"]
     },
     {
         "id": 2,
@@ -128,11 +128,6 @@
             "        &lt;[[1]] src=&quot;village.mp3&quot; type=&quot;audio/mpeg&quot;&gt;",
             "    &lt;/[[2]]&gt;",
             "&lt;/body&gt;"
-        ],
-        "cssCode": [
-            "#audio {",
-            "  display: none;",
-            "}"
         ],
         "jsCode": [
             "function playAudio() {",

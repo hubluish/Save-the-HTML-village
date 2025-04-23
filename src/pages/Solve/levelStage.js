@@ -1,5 +1,4 @@
 (function () {
-    console.log("🔥 레벨 생성 시작");
   
     const container = document.getElementById("level-container");
     if (!container) {
