@@ -1,0 +1,31 @@
+[
+  {
+    "type": "first",
+    "title": "1. 요약 태그",
+    "description": "<span class='red'>summary와 details</span>는\n클릭 시 그 아래의 숨겨진 내용을 보여주거나 다시 숨겨요.\n이 두 태그는 <span class='blue'>자주 묻는 질문, 설명서, 접이식 메뉴 등</span>에서 유용하게 사용돼요.\nHTML에서 내용을 펼치거나 접을 수 있어\n인터랙티브 영역을 만들기에 유용해요!",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. details 태그",
+    "description": "<span class='red'>details 태그</span>는 전체 접히는 영역을 감싸는 역할을 하며,\n기본적으로 안에 있는 내용을 펼치거나 숨길 수 있는 기능이 내장돼 있어요.\n기본적으로 닫혀 있는 상태이고,\n<span class='blue'>open 속성</span>을 주면 처음부터 열린 상태가 돼요.",
+    "imgVisible": false
+  },
+  {
+    "type": "first",
+    "title": "3. details 태그",
+    "description": "<span class='red'>summary 태그</span>는 details 태그 안에서\n접히는 영역의 <span class='blue'>제목이나 요약 부분</span>을 나타내는 태그로,\n사용자가 클릭할 수 있는 버튼처럼 동작해요.\n또한 반드시 details 태그의\n가<span class='blue'>장 첫 번째 자식</span>이어야 정상 작동합니다.",
+    "imgVisible": false
+  },
+  {
+    "type": "second",
+    "code": "<detilas>\n<summary>오늘의 저녁 메뉴</summary>\n치킨🍗\n</details>",
+    "result": "<details><summary>오늘의 저녁 메뉴</summary>치킨🍗</details>",
+    "title": "4. 예시",
+    "description": "<span class='red'>details 태그와 summary 태그</span>는\n다음과 같이 사용할 수 있어요!"
+  }
+]

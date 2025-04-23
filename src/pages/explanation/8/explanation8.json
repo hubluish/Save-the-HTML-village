@@ -1,0 +1,26 @@
+[
+  {
+    "type": "first",
+    "title": "",
+    "description": "여기까지 왔구나뭉!!\n이제~ <span class='red'>표</span>를 만드는 방법을 배워서\n<span class='blue'>시장</span>을 살려줘야한다뭉~\n아자아자 잘할 수 있다뭉!",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "second",
+    "code": "<table border=\"1\">\n<thead>\n<tr>\n<th>이름</th>\n//나이, 직업도 이렇게!\n</tr>\n</thead>\n<tbody>\n<tr>\n...",
+    "result": "<table border=\"1\">\n<thead>\n<tr>\n<th>이름</th>\n<th>나이</th>\n<th>직업</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>김뭉뭉</td>\n<td>24</td>\n<td>개발자</td>\n</tr>\n<tr>\n<td>이뭉뭉</td>\n<td>25</td>\n<td>디자이너</td>\n</tr>\n<tr>\n<td>임뭉뭉</td>\n<td>28</td>\n<td>마케터</td>\n</tr>",
+    "title": "",
+    "description": "- <span class='blue'>table</span>: 전체적인 표의 구조. 표의 시작과 끝을 정의\n- <span class='green'>thead</span>: 헤더 제작 (이름, 나이, 직업 써있는 줄!)\n- <span class='red'>th</span>: 헤더의 셀. 가운데 정렬된 굵은 글씨가 생겨요"
+  },
+  {
+    "type": "second",
+    "code": "<table border=\"1\">\n<thead>\n<tr>\n<th>이름</th>\n//나이, 직업도 이렇게!\n</tr>\n</thead>\n<tbody>\n<tr>\n...",
+    "result": "<table border=\"1\">\n<thead>\n<tr>\n<th>이름</th>\n<th>나이</th>\n<th>직업</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>김뭉뭉</td>\n<td>24</td>\n<td>개발자</td>\n</tr>\n<tr>\n<td>이뭉뭉</td>\n<td>25</td>\n<td>디자이너</td>\n</tr>\n<tr>\n<td>임뭉뭉</td>\n<td>28</td>\n<td>마케터</td>\n</tr>",
+    "title": "",
+    "description": "- <span class='blue'>tbody</span>: 본문을 만들어요\n- <span class='green'>tr</span>: 행을 만들어요\n- <span class='red'>td</span>: 일반적인 셀. tr 안에 여러 td가 있어요"
+  }
+]
