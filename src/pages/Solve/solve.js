@@ -280,10 +280,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!clearedStages.includes(currentStage)) {
       
-      if (!checkAnswerCorrect()) {
-        alert("정답을 모두 맞혀야 다음 스테이지로 넘어갈 수 있어요! 🛑");
-        return;
-      }
+      // if (!checkAnswerCorrect()) {
+      //   alert("정답을 모두 맞혀야 다음 스테이지로 넘어갈 수 있어요! 🛑");
+      //   return;
+      // }
     }
     changeStage(1);
   });
