@@ -49,7 +49,7 @@
 /* full-image가 부모 요소 크기에 맞게 늘어나도록 수정 */
 .full-image {
   width: 600px;
-  margin-left: 2px;
+  margin-left: 1px;
   object-fit: cover;  /* 이미지가 화면에 맞게 채워지도록 조정 */
   transition: opacity 0.4s ease;
 }
