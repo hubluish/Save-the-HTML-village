@@ -19,3 +19,52 @@
     display: block;
     opacity: 1;
 }
+
+#calculatorModal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  #calculatorFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    background: white;
+  }
+
+  .openCalbtn{
+    width: 188px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 281.5px;
+    background: var(--lightGreen-color);
+    box-shadow: -5px -1px 10px 0px rgba(0, 0, 0, 0.25) inset, 2px 4px 10px 0px rgba(0, 0, 0, 0.25) inset;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: black;
+    text-align: center;
+    font-family: DOSSaemmul;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 60px */
+    letter-spacing: -0.88px;
+    border:none;
+
+  }
+
+  .openCalbtn:hover{
+    background: var(--green-color);
+    color: white;
+    border:none;
+  }
