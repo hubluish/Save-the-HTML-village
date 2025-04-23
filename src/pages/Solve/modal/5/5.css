@@ -19,3 +19,20 @@
     display: block;
     opacity: 1;
 }
+
+#resultBird {
+  position: absolute;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  #resultButton {
+    position: absolute;
+    z-index: 20;
+    cursor: pointer;
+  }
+
+  #background{
+    position: absolute;
+    z-index: 5;
+  }

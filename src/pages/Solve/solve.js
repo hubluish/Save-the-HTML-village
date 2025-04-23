@@ -514,13 +514,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 800); // 애니메이션 여유시간
     
         // 7. 다음 스테이지로 이동 또는 엔딩 페이지로 이동
-        setTimeout(() => {
-          if (currentStage === maxStage) {
-            window.location.href = "../EndStory/endStory.html"; // ✅ 엔딩 페이지로 이동
-          } else {
-            changeStage(1); // 다음 문제로 이동
-          }
-        }, 5000); // 애니메이션 여유시간 - 임의로 보려고 설정해둠요
+        // 7. 다음 스테이지로 이동 또는 엔딩 페이지로 이동
+      setTimeout(() => {
+        if (currentStage === 5) {
+          console.log("⛔️ 스테이지 5는 자동 이동 없음");
+          return; // 자동 이동 안 함
+        }
+
+        if (currentStage === maxStage) {
+          window.location.href = "../EndStory/endStory.html";
+        } else {
+          changeStage(1);
+        }
+      }, 5000);
+
     });
   }  
 
