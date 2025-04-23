@@ -1,0 +1,223 @@
+/* 기본 스타일 초기화 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--deepyellow-color);
+  overflow: hidden;
+}
+
+/* --- Top Section --- */
+#top-section {
+  display: flex;
+  margin: 50px auto 0 auto;
+  max-width: 1225px;
+  width: 85%;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.left-rectangle {
+  width: 113px;
+  height: 70px;
+  background: var(--lightyellow-color);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  width: 90px;
+  height: 61px;
+}
+
+.stepper-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 113px;
+}
+
+.stepper {
+  display: flex;
+  gap: 10px;
+}
+
+.step {
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--lightyellow-color)
+}
+
+.step.active {
+  width: 80px;
+  height: 22px;
+  border-radius: 20px;
+  background: var(--yellow-color)
+}
+
+.prev-btn,
+.next-btn {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  background: none; 
+  border: none;
+  padding: 0; 
+  cursor: pointer;
+  display: flex;
+  margin: 15px 27px;
+}
+
+.prev-btn svg,
+.next-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.button-container {
+  width: 1225px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0px;
+}
+
+.title{
+  color: var(--black-color);
+  text-align: center;
+  font-family: "Ownglyph PDH";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 96px */
+  letter-spacing: -0.704px;
+}
+
+.description{
+  color: var(--black-color);
+  font-family: "Ownglyph PDH";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 75px */
+  letter-spacing: -1.1px;
+}
+
+
+#main-section-first {
+  max-width: 1225px;
+  width: 85%;
+  height: 822px;
+  background: var(--lightyellow-color);
+  margin: 32px auto;
+  position: relative;
+  display: flex;
+  border-radius: 40px;
+  flex-direction: column;
+}
+
+.element-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#main-section-second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1225px;
+  width: 85%;
+  margin: 32px auto;
+}
+
+.top-section{
+  display: flex;
+  flex-direction: row;
+  width: 1225px;
+  justify-content: space-between;
+}
+
+.left-section{
+  width: 600px;
+  height: 480px;
+  flex-shrink: 0;
+  background: var(--lightyellow-color);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-section{
+  width: 600px;
+  height: 480px;
+  flex-shrink: 0;
+  background: var(--lightyellow-color);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-section{
+  width: 1225px;
+  height: 323px;
+  flex-shrink: 0;
+  background: var(--lightyellow-color);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 40px;
+  margin: 18px auto 0 auto;
+  position: relative;
+}
+
+.code{
+  color: #000;
+  font-family: "Cascadia Code";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 150%; /* 48px */
+  letter-spacing: -0.352px;
+}
+
+.code-result{
+  color: #000;
+  font-family: "Cascadia Code";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 150%; /* 48px */
+  letter-spacing: -0.352px;
+}

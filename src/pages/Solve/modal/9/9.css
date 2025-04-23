@@ -43,8 +43,8 @@
 /* 각 화면 (screen) div가 기본적으로 화면을 채울 수 있도록 수정 */
 .screen {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 12px;
+  left: 12px;
   width: 100%;
   height: 100%;
   z-index: 1;
