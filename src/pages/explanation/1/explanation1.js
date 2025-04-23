@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const totalSteps = 5;
+  const totalSteps = 4;
   const stepper = document.querySelector('.stepper');
   const firstTemplate = document.getElementById('main-section-first');
   const secondTemplate = document.getElementById('main-section-second');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ⭐ 문제로 넘어갈 경로
   const nextProblemPath = '../../Solve/solve.html?stage=1';
 
-  fetch('./explanation0.json')
+  fetch('./explanation1.json')
     .then(response => response.json())
     .then(data => {
       stepData = data;

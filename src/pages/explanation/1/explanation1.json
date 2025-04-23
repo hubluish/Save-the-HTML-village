@@ -1,0 +1,36 @@
+[
+  {
+    "type": "first",
+    "title": "1. &lt;img&gt; 태그란?",
+    "description": " - 이미지를 웹 페이지에 표시할 때 사용하는 HTML 태그야! <span class='red'> \n- 닫는 태그가 필요 없는 태그</span>야! (&lt;/img&gt; 같은 건 안 써도 돼).\n - <span class='blue'>이미지 경로</span>는 <span class='blue'>src 속성</span>으로 넣어주고, \n대체 텍스트(이미지 설명)는 alt 속성으로 작성해",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. class 속성(클래스)란?",
+    "description": "- class는 HTML 요소에 이름표를 붙여주는 것 같아.\n- 보통 <span class='red'>CSS에서 스타일을 적용</span>하거나, <br><span class='red'>JavaScript로 조작</span>할 때 이 이름을 사용해.\n- 같은 class 이름을 <span class='blue'>여러 요소</span>에 붙일 수 있어.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "second",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n    <img src=”mungmung.png” alt=”뭉뭉”>\n    <img src=”mungmung.png” alt=”뭉뭉” class=”translucent”>\n</body>\n</html>",
+    "result": "<!DOCTYPE html>\n<html>\n<body>\n    <img src=”mungmung.png” alt=”뭉뭉”>\n    <img src=”mungmung.png” alt=”뭉뭉” class=”translucent”>\n</body>\n</html>",
+    "title": "3. 이미지와 클래스 응용",
+    "description": "src를 통해 이미지 파일 경로를 설정할 수 있고,\nalt는 이미지가 안뜰 때 보여줄 텍스트를 의미해요.\n또 class는 CSS나 JS에서 쓰는 이름표 같은 거에요,"
+  },
+  {
+    "type": "second",
+    "code": "<!DOCTYPE html>\n<html>\n<body>\n    <img src=”mungmung.png” alt=”뭉뭉”>\n    <img src=”mungmung.png” alt=”뭉뭉” class=”translucent”>\n</body>\n</html>",
+    "result": "<!DOCTYPE html>\n<html>\n<body>\n    <img src=”mungmung.png” alt=”뭉뭉”>\n    <img src=”mungmung.png” alt=”뭉뭉” class=”translucent”>\n</body>\n</html>",
+    "title": "3. 이미지와 클래스 응용",
+    "description": "src를 통해 이미지 파일 경로를 설정할 수 있고,\nalt는 이미지가 안뜰 때 보여줄 텍스트를 의미해요.\n또 class는 CSS나 JS에서 쓰는 이름표 같은 거에요,"
+  }
+]
