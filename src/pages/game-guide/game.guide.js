@@ -30,8 +30,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateButtons() {
     prevBtn.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
-    nextBtn.style.visibility = currentStep === totalSteps - 1 ? 'hidden' : 'visible';
+  
+    const startBtn = document.querySelector('.start-btn'); // ✅ start-btn 가져오기
+  
+    if (currentStep === totalSteps - 1) {
+      nextBtn.style.display = 'none';       // 다음 버튼 숨기기
+      startBtn.style.display = 'block';     // 시작 버튼 보이기
+    } else {
+      nextBtn.style.display = 'flex';       // 다음 버튼 보이기
+      startBtn.style.display = 'none';      // 시작 버튼 숨기기
+    }
   }
+  
 
   nextBtn.addEventListener('click', function () {
     if (currentStep < totalSteps - 1) {
