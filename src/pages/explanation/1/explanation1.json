@@ -22,14 +22,7 @@
   {
     "type": "second",
     "code": "<!DOCTYPE html>\n<html>\n<body>\n    <img src=”mungmung.png” alt=”뭉뭉”>\n    <img src=”mungmung.png” alt=”뭉뭉” class=”translucent”>\n</body>\n</html>",
-    "result": "<!DOCTYPE html>\n<html>\n<body>\n    <img src=”mungmung.png” alt=”뭉뭉”>\n    <img src=”mungmung.png” alt=”뭉뭉” class=”translucent”>\n</body>\n</html>",
-    "title": "3. 이미지와 클래스 응용",
-    "description": "src를 통해 이미지 파일 경로를 설정할 수 있고,\nalt는 이미지가 안뜰 때 보여줄 텍스트를 의미해요.\n또 class는 CSS나 JS에서 쓰는 이름표 같은 거에요,"
-  },
-  {
-    "type": "second",
-    "code": "<!DOCTYPE html>\n<html>\n<body>\n    <img src=”mungmung.png” alt=”뭉뭉”>\n    <img src=”mungmung.png” alt=”뭉뭉” class=”translucent”>\n</body>\n</html>",
-    "result": "<!DOCTYPE html>\n<html>\n<body>\n    <img src=”mungmung.png” alt=”뭉뭉”>\n    <img src=”mungmung.png” alt=”뭉뭉” class=”translucent”>\n</body>\n</html>",
+    "result": "<img src='../../../assets/icons/explanation/1_.png' style='height : 400px;' >",
     "title": "3. 이미지와 클래스 응용",
     "description": "src를 통해 이미지 파일 경로를 설정할 수 있고,\nalt는 이미지가 안뜰 때 보여줄 텍스트를 의미해요.\n또 class는 CSS나 JS에서 쓰는 이름표 같은 거에요,"
   }
