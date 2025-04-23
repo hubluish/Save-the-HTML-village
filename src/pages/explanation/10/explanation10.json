@@ -2,7 +2,7 @@
   {
     "type": "first",
     "title": "1. 이미지맵이란?",
-    "description": "< a >의 업그레이드 버전이라고 생각해도 좋아요!\n한 이미지에 여러 URL을 넣을 수 있게 해준답니다!\n <div class='rectangle'></li>< img usemap="" > : 이미지를 정의하고 usemap 속성으로 맵과 연결\n<li>< map name="" > : <img> 태그에서 연결할 맵을 정의하는 컨테이너\n<li>< area > : 클릭할 수 있는 영역을 설정 (모양, 좌표, 링크 등)</div>",
+    "description": "a태그의 업그레이드 버전이라고 생각해도 좋아요!\n한 이미지에 여러 URL을 넣을 수 있게 해준답니다!\n<div class='rectangle'>img usemap='' : 이미지를 정의하고 usemap 속성으로 맵과 연결\n map name='' 태그에서 연결할 맵을 정의하는 컨테이너\narea : 클릭할 수 있는 영역을 설정 (모양, 좌표, 링크 등)</div>",
     "imgVisible": true,
     "imgSize": {
       "width": 230,
