@@ -1,70 +1,93 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const totalSteps = 5; // 총 스텝 수
+document.addEventListener('DOMContentLoaded', function () {
+  const totalSteps = 4;
   const stepper = document.querySelector('.stepper');
   const firstTemplate = document.getElementById('main-section-first');
   const secondTemplate = document.getElementById('main-section-second');
+
+  const titleElFirst = firstTemplate.querySelector('.title');
+  const descElFirst = firstTemplate.querySelector('.description');
+  const imgEl = firstTemplate.querySelector('img');
+
+  const codeEl = document.querySelector('.code');
+  const resultEl = document.querySelector('.code-result');
+  const titleElSecond = secondTemplate.querySelector('.title');
+  const descElSecond = secondTemplate.querySelector('.description');
+
   let currentStep = 0;
+  let stepData = [];
 
-  const stageTemplates = ['first', 'first', 'second', 'second', 'first'];
+  // ⭐ 문제로 넘어갈 경로
+  const nextProblemPath = '../../Solve/solve.html?stage=5';
 
-  // ⭐ 문제로 넘어갈 경로 추가 (여기 수정!)
-  const nextProblemPath = '../../Solve/solve.html?stage=5';  // ← 여기 경로 수정해서 사용해! (예: 1.html)
+  fetch('./explanation5.json')
+    .then(response => response.json())
+    .then(data => {
+      stepData = data;
 
-  // 스텝 표시 요소 생성
-  for (let i = 0; i < totalSteps; i++) {
-    const step = document.createElement('div');
-    step.classList.add('step');
-    if (i === currentStep) {
-      step.classList.add('active');
-    }
-    step.addEventListener('click', function() {
-      currentStep = i;
+      // 스텝 표시 생성
+      for (let i = 0; i < totalSteps; i++) {
+        const step = document.createElement('div');
+        step.classList.add('step');
+        if (i === currentStep) step.classList.add('active');
+        step.addEventListener('click', function () {
+          currentStep = i;
+          updateSteps();
+        });
+        stepper.appendChild(step);
+      }
+
+      // 스텝 UI 및 내용 업데이트
+      function updateSteps() {
+        const data = stepData[currentStep];
+        const steps = document.querySelectorAll('.step');
+        steps.forEach((step, index) => {
+          step.classList.toggle('active', index === currentStep);
+        });
+
+        if (data.type === 'first') {
+          firstTemplate.style.display = 'flex';
+          secondTemplate.style.display = 'none';
+          titleElFirst.innerHTML = data.title;
+          descElFirst.innerHTML = data.description.replace(/\n/g, '<br>');
+
+          if (data.imgVisible) {
+            imgEl.style.display = 'block';
+            imgEl.style.width = data.imgSize.width + 'px';
+            imgEl.style.height = data.imgSize.height + 'px';
+          } else {
+            imgEl.style.display = 'none';
+          }
+        } else {
+          firstTemplate.style.display = 'none';
+          secondTemplate.style.display = 'flex';
+          codeEl.innerText = data.code;
+          resultEl.innerHTML = data.result;
+          titleElSecond.innerHTML = data.title;
+          descElSecond.innerHTML = data.description.replace(/\n/g, '<br>');
+        }
+      }
+
+      document.querySelectorAll('.next-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (currentStep < totalSteps - 1) {
+            currentStep++;
+            updateSteps();
+          } else {
+            window.location.href = nextProblemPath;
+          }
+        });
+      });
+
+      document.querySelectorAll('.prev-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (currentStep > 0) {
+            currentStep--;
+            updateSteps();
+          }
+        });
+      });
+
       updateSteps();
-    });
-    stepper.appendChild(step);
-  }
-
-  // 스텝 표시 업데이트 + 템플릿 표시 업데이트
-  function updateSteps() {
-    const steps = document.querySelectorAll('.step');
-    steps.forEach((step, index) => {
-      step.classList.toggle('active', index === currentStep);
-    });
-
-    if (stageTemplates[currentStep] === 'first') {
-      firstTemplate.style.display = 'flex';
-      secondTemplate.style.display = 'none';
-    } else {
-      firstTemplate.style.display = 'none';
-      secondTemplate.style.display = 'flex';
-    }
-  }
-
-  // 다음 버튼
-  const nextButtons = document.querySelectorAll('.next-btn');
-  nextButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      if (currentStep < totalSteps - 1) {
-        currentStep++;
-        updateSteps();
-      } else {
-        // ⭐ 마지막 스텝이면 다음 문제 페이지로 이동!
-        window.location.href = nextProblemPath;
-      }
-    });
-  });
-
-  // 이전 버튼
-  const prevButtons = document.querySelectorAll('.prev-btn');
-  prevButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      if (currentStep > 0) {
-        currentStep--;
-        updateSteps();
-      }
-    });
-  });
-
-  // 첫 로딩 시 초기화
-  updateSteps();
+    })
+    .catch(error => console.error('❌ JSON 로드 실패:', error));
 });
