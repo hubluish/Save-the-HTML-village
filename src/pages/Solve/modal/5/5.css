@@ -24,12 +24,16 @@
   position: absolute;
     z-index: 10;
     cursor: pointer;
+    left: 33px;
+    top: 440px;
   }
   
   #resultButton {
     position: absolute;
     z-index: 20;
     cursor: pointer;
+    left: 480px;
+    top: 740px
   }
 
   #background{
