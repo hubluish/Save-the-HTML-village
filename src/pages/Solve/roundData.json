@@ -121,7 +121,7 @@
     {
         "id": 5,
         "title": "새소리를 듣고싶다뭉!",
-        "problemText": "새들은 노래부르는 걸 좋아해!<br>새를 클릭하면 새소리가 들리게 해보자!",
+        "problemText": "새들은 노래부르는 걸 좋아해!<br>새들의 목소리를 찾아주자!",
         "defaultCode": [
             "&lt;body&gt;",
             "    &lt;[[0]] id=&quot;audio&quot;&gt;",

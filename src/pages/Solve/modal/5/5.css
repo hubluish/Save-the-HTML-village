@@ -20,6 +20,10 @@
     opacity: 1;
 }
 
+.hidden {
+  display: none !important;
+}
+
 #playBirdBtn {
   display: flex;
   position: absolute;
@@ -29,16 +33,9 @@
   top: 440px;
   cursor: pointer;
 }
-  
-#resultButton {
-  position: absolute;
-  z-index: 20;
-  cursor: pointer;
-  left: 480px;
-  top: 740px
-}
 
 #background{
+  width: 600px;
   position: absolute;
   z-index: 5;
 }
