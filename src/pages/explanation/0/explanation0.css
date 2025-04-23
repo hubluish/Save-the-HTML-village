@@ -223,3 +223,17 @@ body {
   line-height: 150%; /* 48px */
   letter-spacing: -0.352px;
 }
+
+.blue{
+  color: var(--blue-color);
+}
+
+.red{
+  color: var(--red-color);
+}
+
+.rectangle{
+  border-radius: 40px;
+  border: 1px solid #000;
+  width: 1080px;
+}
