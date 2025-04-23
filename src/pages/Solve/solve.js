@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
 
           rebindEvents();
+          saveCurrentTabAnswers(); // 문제 시작하자마자 답 저장!
           // 문제 시작하자마자 모달 띄우기
           const container = document.getElementById("stage-result-container");
           
@@ -200,19 +201,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const answerArray = currentRoundData.answers;
     const allAnswers = Array(answerArray.length).fill("");
   
-    const tabs = [
-      { type: "html", code: currentRoundData.defaultCode },
-      { type: "css", code: currentRoundData.cssCode },
-      { type: "js", code: currentRoundData.jsCode },
-    ];
+    const tabTypes = ["html", "css", "js"];  // ❗ currentTab 무시! 전부 확인!
   
-    tabs.forEach(({ type, code }) => {
-      if (!code) return;
-  
-      // 이 탭에 [[n]] 형태의 문제가 하나라도 있는지 확인
-      const hasSlots = code.some(line => /\[\[\d+\]\]/.test(line));
-      if (!hasSlots) return;
-  
+    tabTypes.forEach((type) => {
       const saved = JSON.parse(localStorage.getItem(`answers-stage-${currentStage}-${type}`));
       if (saved && Array.isArray(saved)) {
         saved.forEach((value, idx) => {
@@ -383,26 +374,34 @@ document.addEventListener("DOMContentLoaded", function () {
   // 탭, 클리어 버튼 등 재바인딩 (이벤트 중복 대비)
   function rebindEvents() {
     const htmlTab = document.getElementById("html-tab");
-    if (htmlTab) {
-      htmlTab.addEventListener("click", () => switchTab("html"));
-    }
     const cssTab = document.getElementById("css-tab");
+    const jsTab = document.getElementById("js-tab"); // ⭐ js 탭도 추가
     const clearButton = document.querySelector(".code-clear-button");
-    if (!htmlTab || !cssTab || !clearButton) {
-      console.warn("❗탭 또는 클리어 버튼이 아직 DOM에 없음, rebindEvents 스킵");
+  
+    if (!clearButton) {
+      console.warn("❗클리어 버튼이 없음, rebindEvents 스킵");
       return;
     }
   
-    const newHtmlTab = htmlTab.cloneNode(true);
-    const newCssTab = cssTab.cloneNode(true);
+    // 🟡 탭이 없을 수도 있으니까 각각 따로 체크!
+    if (htmlTab) {
+      const newHtmlTab = htmlTab.cloneNode(true);
+      htmlTab.parentNode.replaceChild(newHtmlTab, htmlTab);
+      newHtmlTab.addEventListener("click", () => switchTab("html"));
+    }
+    if (cssTab) {
+      const newCssTab = cssTab.cloneNode(true);
+      cssTab.parentNode.replaceChild(newCssTab, cssTab);
+      newCssTab.addEventListener("click", () => switchTab("css"));
+    }
+    if (jsTab) {
+      const newJsTab = jsTab.cloneNode(true);
+      jsTab.parentNode.replaceChild(newJsTab, jsTab);
+      newJsTab.addEventListener("click", () => switchTab("js"));
+    }
+  
     const newClearButton = clearButton.cloneNode(true);
-  
-    htmlTab.parentNode.replaceChild(newHtmlTab, htmlTab);
-    cssTab.parentNode.replaceChild(newCssTab, cssTab);
     clearButton.parentNode.replaceChild(newClearButton, clearButton);
-  
-    newHtmlTab.addEventListener("click", () => switchTab("html"));
-    newCssTab.addEventListener("click", () => switchTab("css"));
   
     newClearButton.addEventListener("click", () => {
       const answerArray = currentRoundData.answers;
@@ -429,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
   
-      // 3. 전체 정답 비교
+      // 3. 채점 로직 (이건 네 원래 코드 그대로)
       let allCorrect = true;
       for (let i = 0; i < answerArray.length; i++) {
         if (allAnswers[i] !== answerArray[i]) {
@@ -438,8 +437,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
   
-      // 4. 현재 탭만 정답 표시
-      dropZones.forEach(zone => {
+      const dropZonesAfter = document.querySelectorAll(".code-input-problem");
+      dropZonesAfter.forEach(zone => {
         const idx = parseInt(zone.dataset.index);
         const userInput = zone.textContent.trim();
         const correctAnswer = answerArray[idx];
@@ -453,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
   
-      // 5. 정답 여부에 따라 목숨 차감
+      // 4. 목숨 처리 및 스테이지 완료
       if (!allCorrect) {
         const lives = document.querySelectorAll(".life");
         if (lives.length > 0) {
@@ -508,26 +507,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // JS도 동적으로 로드
             const script = document.createElement("script");
-            script.src = `modal/${currentStage}/${currentStage}.js`;
+            script.src = `modal/${stageId}/${stageId}.js`;
+            script.onload = () => {
+              // ✅ 여기서 이벤트 재바인딩
+              rebindEvents();  // 이 타이밍에 해야 modal JS도 준비된 상태!
+            };
             document.body.appendChild(script);
           });
       }, 800); // 애니메이션 여유시간
     
         // 7. 다음 스테이지로 이동 또는 엔딩 페이지로 이동
-        // 7. 다음 스테이지로 이동 또는 엔딩 페이지로 이동
-      setTimeout(() => {
-        if (currentStage === 5) {
-          console.log("⛔️ 스테이지 5는 자동 이동 없음");
-          return; // 자동 이동 안 함
-        }
-
-        if (currentStage === maxStage) {
-          window.location.href = "../EndStory/endStory.html";
-        } else {
-          changeStage(1);
-        }
-      }, 5000);
-
+        setTimeout(() => {
+          if (currentStage === maxStage) {
+            window.location.href = "../EndStory/endStory.html"; // 엔딩 페이지로 이동
+          } else {
+            window.location.href = `../explanation/${currentStage + 1}/explanation${currentStage + 1}.html`; // 설명 페이지로 이동
+          }
+        }, 3000); // 애니메이션 여유시간 - 임의로 보려고 설정해둠요
     });
   }  
 

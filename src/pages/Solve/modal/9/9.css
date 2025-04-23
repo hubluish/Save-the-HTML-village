@@ -22,6 +22,7 @@
 }
 
 .stage-result-img {
+  width: 600px;
   z-index: 2;
   /* position: absolute; */
 }
@@ -36,14 +37,14 @@
 }
 
 .result-left {
-  margin-left: -381px;
+  width: 600px;
 }
 
 /* 각 화면 (screen) div가 기본적으로 화면을 채울 수 있도록 수정 */
 .screen {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 12px;
+  left: 12px;
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -52,8 +53,6 @@
 /* full-image가 부모 요소 크기에 맞게 늘어나도록 수정 */
 .full-image {
   width: 600px;
-  margin-left: 12px;
-  margin-top: 12px;
   object-fit: cover;  /* 이미지가 화면에 맞게 채워지도록 조정 */
   transition: opacity 0.4s ease;
 }
@@ -88,8 +87,8 @@ body, html {
 
 .center-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 47%;
   transform: translate(-50%, -120%);
   color: #000;
   text-align: center;
@@ -105,7 +104,7 @@ body, html {
   z-index: 20;
   position: absolute;
   top: 60%;
-  left: 50%;
+  left: 47%;
   transform: translateX(-50%);
   width: 200px;
   height: 50px;
