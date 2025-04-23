@@ -7,4 +7,4 @@ const bgm = document.getElementById("bgm");
   setTimeout(() => {
     bgm.muted = false;
     console.log("🔊 소리 켜짐!");
-  }, 5000); // 5000ms = 5초
+  }, 7000); // 5000ms = 5초
