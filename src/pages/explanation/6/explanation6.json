@@ -1,0 +1,32 @@
+[
+  {
+    "type": "first",
+    "title": "1. 목록 태그",
+    "description": "목록 태그로는 <span class='red'>ul, ol, li</span>가 있어요.\n목록 관련 태그는 웹페이지에서 <span class='blue'>여러 항목을 나열</span> 하거나\n <span class='blue '>정리된 순서</span>를 보여주기에 유용하게 사용돼요.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. li 태그",
+    "description": "실제 목록의 각 항목은 li 태그로 작성해요.\nli는 <span class='blue'>list item</span>의 약자로,\nul이나 ol 태그 안에서 <span class='red'>개별 항목</span>을 나타낼 때\n 반드시 함께 사용되어야해요.",
+    "imgVisible": false
+  },
+  {
+    "type": "second",
+    "code": "<h2>과일</h2>\n <ul>\n <li>사과</li>\n <li>바나나</li>\n <li>포도</li>\n <li>딸기</li>\n <li>오렌지</li>\n </ul>",
+    "result": "<h2>과일</h2>\n <ul>\n <li>사과</li>\n <li>바나나</li>\n <li>포도</li>\n <li>딸기</li>\n <li>오렌지</li>\n </ul>",
+    "title": "3. ul 태그",
+    "description": "ul 태그는  <span class='red'>순서가 없는</span> 목록을 나타낼 때 사용되며,\n각 항목 앞에 기본적으로  <span class='blue'>점 형태의 기호</span>가 붙어요."
+  },
+  {
+    "type": "second",
+    "code": "<div>\n<h2>미라클 모닝</h2>\n<ul>\n  <li>아침에 일찍 일어나기</li>\n  <li>물 한잔 마시기</li>\n  <li>가벼운 스트레칭</li>\n  <li>To Do List 정리</li>\n  <li>한가지 일 몰입하기</li>\n</ul>\n</div>",
+    "result": "<h2>미라클 모닝</h2><ul><li>아침에 일찍 일어나기</li>  <li>물 한잔 마시기</li>  <li>가벼운 스트레칭</li>  <li>To Do List 정리</li>  <li>한가지 일 몰입하기</li></ul>",
+    "title": "4. ol 태그",
+    "description": "ol 태그는  <span class='red'>순서가 중요한 목록</span>을 표현할 때 사용되며,\n항목 앞에 <span class='blue'>숫자나 알파벳</span>이 자동으로 붙어요."
+  }
+]  
