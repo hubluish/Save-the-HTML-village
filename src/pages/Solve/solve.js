@@ -152,31 +152,35 @@ document.addEventListener("DOMContentLoaded", function () {
             zone.className = "code-input-problem";
           });
 
-          // 문제 시작 시 (기존 위치에서)
-          fetch(`modal/${stageId}/${stageId}.html`)
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              const container = document.getElementById("stage-result-container");
-
-              container.innerHTML = doc.body.innerHTML;
-
-              // 여기! script 추가 전에 requestAnimationFrame 사용!
-              requestAnimationFrame(() => {
-                const style = document.createElement("link");
-                style.rel = "stylesheet";
-                style.href = `modal/${stageId}/${stageId}.css`;
-                document.head.appendChild(style);
-
-                const script = document.createElement("script");
-                script.src = `modal/${stageId}/${stageId}.js`;
-                document.body.appendChild(script);
-              });
-            });
-
           rebindEvents();
           saveCurrentTabAnswers(); // 문제 시작하자마자 답 저장!
+          // 문제 시작하자마자 모달 띄우기
+          const container = document.getElementById("stage-result-container");
+          
+          // 문제 시작 시 (기존 위치에서)
+          fetch(`modal/${stageId}/${stageId}.html`)
+          .then(res => res.text())
+          .then(html => {
+            // DOMParser로 HTML 전체를 파싱!
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+        
+            // body 태그 안쪽만 추출!
+            container.innerHTML = doc.body.innerHTML;
+
+            // intro만 보여주기
+            const introImg = container.querySelector(".stage-intro-img");
+            if (introImg) introImg.classList.add("show");
+
+            const style = document.createElement("link");
+            style.rel = "stylesheet";
+            style.href = `modal/${stageId}/${stageId}.css`;
+            document.head.appendChild(style);
+
+            const script = document.createElement("script");
+            script.src = `modal/${stageId}/${stageId}.js`;
+            document.body.appendChild(script);
+          });
       });
   }
 
@@ -371,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function rebindEvents() {
     const htmlTab = document.getElementById("html-tab");
     const cssTab = document.getElementById("css-tab");
-    const jsTab = document.getElementById("js-tab"); // js 탭도 추가
+    const jsTab = document.getElementById("js-tab"); // ⭐ js 탭도 추가
     const clearButton = document.querySelector(".code-clear-button");
   
     if (!clearButton) {
@@ -488,7 +492,7 @@ document.addEventListener("DOMContentLoaded", function () {
           .then(html => {
             container.innerHTML = html;
 
-            // 정답 시 intro 숨기고 result 보이기
+            // ✅ 정답 시 intro 숨기고 result 보이기
             const introImg = container.querySelector(".stage-intro-img");
             const resultImg = container.querySelector(".stage-result-img");
 
@@ -505,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const script = document.createElement("script");
             script.src = `modal/${stageId}/${stageId}.js`;
             script.onload = () => {
-              // 여기서 이벤트 재바인딩
+              // ✅ 여기서 이벤트 재바인딩
               rebindEvents();  // 이 타이밍에 해야 modal JS도 준비된 상태!
             };
             document.body.appendChild(script);
