@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const totalSteps = 5;
+  const totalSteps = 4;
   const stepper = document.querySelector('.stepper');
   const firstTemplate = document.getElementById('main-section-first');
   const secondTemplate = document.getElementById('main-section-second');
