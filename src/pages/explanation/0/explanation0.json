@@ -1,0 +1,42 @@
+[
+  {
+    "type": "first",
+    "title": "1. HTML이란?",
+    "description": "HTML은 <span class='red'>웹 페이지의 구조</span>를 만드는 언어에요!\nHTML을 사용하면 <span class='blue'>텍스트, 이미지, 링크</span> 등\n다양한 요소들을 웹 페이지에 표시할 수 있어요.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. HTML 기본 구조",
+    "description": "HTML은 항상 &lt;html&gt;, &lt;head&gt;, &lt;body&gt;로 구성돼요!<br><div class='rectangle'>&lt;html&gt;: HTML 문서의 시작과 끝을 나타내요.<br>&lt;head&gt;: 웹 페이지의 메타정보, 제목 등을 포함하는 부분이에요.<br>&lt;title&gt; 태그로 페이지 제목을 설정할 수 있어요.<br>&lt;body&gt;: 웹 페이지의 실제 콘텐츠가 들어가는 부분이에요.</div>",
+    "imgVisible": false
+  },
+  {
+    "type": "second",
+    "code": "<div>\n<h1>안녕</h1>\n<p>반가워요!</p>\n<h2>마을을 살려보아요!!</h2>\n\n<h1>저는</h1>\n<p>뭉뭉이에요!</p>\n<h6>히히</h6>\n</div>",
+    "result": "<h1>안녕\n <p>반가워요!\n <h2>마을을 살려보아요!!\n<h1>저는\n <p>뭉뭉이에요!\n <h6>히히",
+    "title": "3. 기본 태그들",
+    "description": "<span class='red'>제목 태그</span>는 &lt;h1&gt; ~ &lt;h6&gt;이에요.\n&lt;h1&gt;이 가장 큰 제목이고 &lt;h6&gt;으로 갈수록 작아져요!\n<span class='blue'>문단</span>은 &lt;p&gt;를 사용해요."
+  },
+  {
+    "type": "second",
+    "code": "<div>\n<h1>안녕</h1>\n<p>반가워요!</p>\n<h2>마을을 살려보아요!!</h2>\n\n<h1>저는</h1>\n<p>뭉뭉이에요!</p>\n<h6>히히</h6>\n</div>",
+    "result": "<h1>안녕\n <p>반가워요!\n <h2>마을을 살려보아요!!\n<h1>저는\n <p>뭉뭉이에요!\n <h6>히히",
+    "title": "4. 계층구조",
+    "description": "HTML 은 <span class='blue'>계층 구조</span>에요!\n위의 코드의 &lt;div&gt가 다른 태그들을 감싸고 있는거 보이죠?\n이렇게 태그 안에 또 다른 태그를 넣을 수 있어요 ~!"
+  },
+  {
+    "type": "first",
+    "title": "마지막!",
+    "description": "HTML은 콘텐츠를 기본적으로 구조화해주는 역할을 해요.\n디자인도 추가하고 싶다면 CSS를 사용해주면 된답니다!\n\n뭉뭉이와 HTML 부터 CSS까지!\n차근차근 배워보아요>.<",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  }
+]

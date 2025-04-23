@@ -1,0 +1,32 @@
+[
+  {
+    "type": "first",
+    "title": "1. Justify content 란?",
+    "description": "<span class='blue'>가로축</span>을 기준으로 <span class='red'>자식 요소</span>들을 어떻게 <span class='blue'>정렬</span>할 지 정하는 속성이에요.\nflex-direction이 row면 가로 정렬,\ncolumn이면 세로 정렬에 영향을 줘요.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. justify-content의 종류",
+    "description": "선택한 항목에 따라 정렬 기준이 정해져요.\n<div class='rectangle'>- flex-start: 시작 지점으로 정렬(기본값)\n- flex-end: 끝 지점으로 정렬\n- center: 가운데 정렬\n- space-between: 양 끝 정렬 + 요소들 사이 동일 간격\n- space-around: 요소들 양쪽에 동일 간격\n- space-evenly: 요소들 사이와 양끝까지 동일 간격</div>"
+  },
+  {
+    "type": "first",
+    "title": "3. align-items 란?",
+    "description": "세로축을 기준으로 자식 요소들을 어떻게 정렬할 지 정하는 속성이에요.\nflex-direction이 row면 세로 정렬,\ncolumn이면 가로 정렬에 영향을 줘요.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "4. align-items의 종류",
+    "description": "선택한 항목에 따라 정렬 기준이 정해져요.\n <div class='rectangle'>- stretch: 컨테이너 높이에 맞춰 늘어남\n - flex-start: 위쪽 정렬\n - flex-end: 아래쪽 정렬\n - center: 중앙 정렬\n - baseline: 텍스트 기준점 맞춤</div>"
+  }
+]
