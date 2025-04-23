@@ -39,12 +39,15 @@
   }
 
   .openCalbtn{
-    width: 188px;
-    height: 72px;
+    position: absolute;
+    left: 40px;
+    bottom: 30px;
+    width: 111.429px;
+    height: 39px;
     flex-shrink: 0;
     border-radius: 281.5px;
     background: var(--lightGreen-color);
-    box-shadow: -5px -1px 10px 0px rgba(0, 0, 0, 0.25) inset, 2px 4px 10px 0px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25) inset;
 
     display: flex;
 
@@ -54,17 +57,17 @@
     color: black;
     text-align: center;
     font-family: DOSSaemmul;
-    font-size: 40px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 60px */
     letter-spacing: -0.88px;
     border:none;
-
+    z-index: 9999;
   }
 
   .openCalbtn:hover{
-    background: var(--green-color);
+    background: var(--deepgreen-color);
     color: white;
     border:none;
   }
