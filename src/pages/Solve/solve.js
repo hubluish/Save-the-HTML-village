@@ -514,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             window.location.href = `../explanation/${currentStage + 1}/explanation${currentStage + 1}.html`; // 설명 페이지로 이동
           }
-        }, 8000); // 애니메이션 여유시간 - 임의로 보려고 설정해둠요
+        }, 3000); // 애니메이션 여유시간 - 임의로 보려고 설정해둠요
     });
   }  
 
