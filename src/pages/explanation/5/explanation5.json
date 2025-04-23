@@ -1,0 +1,22 @@
+[
+  {
+    "type": "first",
+    "title": "1. &lt;audio&gt; 태그",
+    "description": "audio 태그는 HTML에서 오디오 파일을\n웹페이지에 삽입하고 재생하기 위해 사용하는 태그에요.\n이 태그는 브라우저에 내장된 오디오 플레이어를 통해 음성 콘텐츠를 제공하고,<br>다양한 오디오 포맷을 제공해요.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. &lt;audio&gt; 속성의 종류",
+    "description": "audio 태그는 속성을 통해 동작 설정이 가능하고,\n자바스크립트를 통해 재생을 동적으로 제어할 수도 있어요!\n<div class='rectangle'>- controls: 플레이어 버튼의 유무\n- autoplay: 자동 재생을 결정함\n- loop: 반복 재생을 결정함\n- muted: 음소거 상태로 시작</div>"
+  },
+  {
+    "type": "first",
+    "title": "3. source 태그",
+    "description": "source 태그는 audio 태그 안에서 <span class='red'>오디오 파일 경로</span>를 지정해요.\n다양한 형식을 넣어 놓으면, 그 중에서 브라우저가 하나를 선택해<br>표시할 수 있기 때문에, 여러 형식을 제공하면 <span class='blue'>호환성이 높아져요!</span>\n<div class ='rectangle'>&lt;audio controls&gt;\n  &lt;source src=&quot;music.mp3&quot; type=&quot;audio/mpeg&quot;&gt;\n  &lt;source src=&quot;music.wav&quot; type=&quot;audio/wav&quot;&gt;\n  브라우저가 오디오를 지원하지 않습니다.\n&lt;/audio&gt;</div>"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "type": "first",
+    "title": "1. < dialog > 태그란?",
+    "description": "<span class='red'>팝업 창(모달) 만들 때</span> 사용하는 HTML 태그야\nHTML5에 새로 생긴 태그로,\n 기본적으로 숨겨져 있고<span class='blue'>.showModal()</span>로 열 수 있어!",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. < dialog > 태그의 특징",
+    "description": "<ul><li><span class='red'>open 속성</span>이 있어야 보여짐\n<li><span class='blue'>.show() </span>또는 <span class='blue'>.showModal()</span>로 열 수 있어\n<li><span class='blue'>.close()</span>로 닫을 수 있어\n<li>기본적으로 가운데 떠 있음 (모달 형태)</ul>",
+    "imgVisible": false
+  },
+  {
+    "type": "first",
+    "title": "3. < button > 태그란?",
+    "description": "<span class='red'>클릭 가능한 버튼을 만드는 태그</span>야\n <span class='blue'>이벤트를 연결해서</span> 팝업을 <span class='blue'>열거나 닫을 때</span> 자주 사용해!",
+    "imgVisible": false
+  }
+]  

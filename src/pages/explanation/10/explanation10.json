@@ -1,0 +1,44 @@
+[
+  {
+    "type": "first",
+    "title": "1. 이미지맵이란?",
+    "description": "a태그의 업그레이드 버전이라고 생각해도 좋아요!\n한 이미지에 여러 URL을 넣을 수 있게 해준답니다!\n<div class='rectangle'>img usemap='' : 이미지를 정의하고 usemap 속성으로 맵과 연결\n map name='' 태그에서 연결할 맵을 정의하는 컨테이너\narea : 클릭할 수 있는 영역을 설정 (모양, 좌표, 링크 등)</div>",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. li 태그",
+    "description": "실제 목록의 각 항목은 li 태그로 작성해요.\nli는 <span class='blue'>list item</span>의 약자로,\nul이나 ol 태그 안에서 <span class='red'>개별 항목</span>을 나타낼 때\n 반드시 함께 사용되어야해요.",
+    "imgVisible": false
+  },
+  {
+    "type": "first",
+    "title": "1. 목록 태그",
+    "description": "목록 태그로는 <span class='red'>ul, ol, li</span>가 있어요.\n목록 관련 태그는 웹페이지에서 <span class='blue'>여러 항목을 나열</span> 하거나\n <span class='blue '>정리된 순서</span>를 보여주기에 유용하게 사용돼요.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  },
+  {
+    "type": "first",
+    "title": "2. li 태그",
+    "description": "실제 목록의 각 항목은 li 태그로 작성해요.\nli는 <span class='blue'>list item</span>의 약자로,\nul이나 ol 태그 안에서 <span class='red'>개별 항목</span>을 나타낼 때\n 반드시 함께 사용되어야해요.",
+    "imgVisible": false
+  },
+  {
+    "type": "first",
+    "title": "1. 목록 태그",
+    "description": "목록 태그로는 <span class='red'>ul, ol, li</span>가 있어요.\n목록 관련 태그는 웹페이지에서 <span class='blue'>여러 항목을 나열</span> 하거나\n <span class='blue '>정리된 순서</span>를 보여주기에 유용하게 사용돼요.",
+    "imgVisible": true,
+    "imgSize": {
+      "width": 230,
+      "height": 150
+    }
+  }
+]  
