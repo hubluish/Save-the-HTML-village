@@ -510,7 +510,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // 7. 다음 스테이지로 이동 또는 엔딩 페이지로 이동
         setTimeout(() => {
           if (currentStage === maxStage) {
-            window.location.href = "../EndStory/endStory.html"; // 엔딩 페이지로 이동
+            window.location.href = "../endStory/endStory.html"; // 엔딩 페이지로 이동
           } else {
             window.location.href = `../explanation/${currentStage + 1}/explanation${currentStage + 1}.html`; // 설명 페이지로 이동
           }
